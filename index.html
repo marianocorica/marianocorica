@@ -1,718 +1,334 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mariano Corica — Teología, cultura y pensamiento</title>
+    <title>Mariano Corica — Teólogo y escritor</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
-
-  <style>
-
-    :root {
-      --fondo: #f5f2eb;
-      --texto: #181815;
-      --gris: #716d65;
-      --linea: #d8d3c8;
-      --acento: #765b43;
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--fondo);
-      color: var(--texto);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* NAVEGACIÓN */
-
-    header {
-      max-width: var(--max);
-      margin: auto;
-      padding: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--linea);
-    }
-
-    .logo {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: .14em;
-    }
-
-    nav {
-      display: flex;
-      gap: 30px;
-      font-size: 13px;
-    }
-
-    nav a:hover {
-      color: var(--acento);
-    }
-
-    /* PORTADA */
-
-    .hero {
-      max-width: var(--max);
-      margin: auto;
-      padding: 130px 30px 150px;
-      border-bottom: 1px solid var(--linea);
-    }
-
-    .etiqueta {
-      color: var(--gris);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      margin-bottom: 30px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: "Source Serif 4", serif;
-      font-weight: 400;
-      line-height: 1.05;
-    }
-
-    h1 {
-      font-size: clamp(55px, 8vw, 100px);
-      letter-spacing: -.05em;
-      margin: 0;
-    }
-
-    h1 em,
-    h2 em {
-      font-style: italic;
-    }
-
-    .intro {
-      max-width: 540px;
-      color: #5e5a53;
-      font-size: 17px;
-      margin: 40px 0;
-    }
-
-    .enlace {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
-      border-bottom: 1px solid var(--texto);
-      padding-bottom: 4px;
-    }
-
-    /* SECCIONES */
-
-    section {
-      max-width: var(--max);
-      margin: auto;
-      padding: 120px 30px;
-      border-bottom: 1px solid var(--linea);
-    }
-
-    .titulo-seccion {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      margin-bottom: 75px;
-    }
-
-    .titulo-seccion h2 {
-      font-size: 58px;
-      letter-spacing: -.04em;
-      margin: 0;
-    }
-
-    /* ENSAYOS */
-
-    .destacado {
-      border-top: 1px solid var(--texto);
-      padding: 35px 0 60px;
-    }
-
-    .destacado h3 {
-      font-size: 44px;
-      margin: 15px 0 25px;
-    }
-
-    .destacado p {
-      max-width: 650px;
-      color: var(--gris);
-    }
-
-    .ensayos {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--linea);
-    }
-
-    .ensayo {
-      padding: 30px 30px 20px 0;
-      border-right: 1px solid var(--linea);
-      margin-right: 30px;
-    }
-
-    .ensayo:last-child {
-      border: 0;
-    }
-
-    .ensayo h3 {
-      font-size: 28px;
-      margin: 15px 0;
-    }
-
-    .ensayo p {
-      color: var(--gris);
-      font-size: 14px;
-    }
-
-    .leer {
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    /* LIBRO */
-
-    .libro {
-      background: #ece8df;
-      max-width: none;
-      padding-left: max(30px, calc((100vw - var(--max)) / 2 + 30px));
-      padding-right: max(30px, calc((100vw - var(--max)) / 2 + 30px));
-    }
-
-    .libro-contenido {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 90px;
-      align-items: center;
-    }
-
-    .portada {
-      width: 280px;
-      height: 390px;
-      background: #20201c;
-      color: #f3eee4;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 15px 18px 0 #d5d0c5;
-    }
-
-    .portada small {
-      font-size: 12px;
-    }
-
-    .portada strong {
-      font-family: "Source Serif 4", serif;
-      font-size: 38px;
-      line-height: .9;
-      font-weight: 400;
-    }
-
-    .informacion-libro {
-      max-width: 620px;
-    }
-
-    .informacion-libro h3 {
-      font-size: 58px;
-      margin: 15px 0 25px;
-    }
-
-    .informacion-libro p {
-      color: var(--gris);
-    }
-
-    /* PREDICACIONES */
-
-    .predica {
-      border-top: 1px solid var(--texto);
-    }
-
-    .predica article {
-      display: grid;
-      grid-template-columns: 1fr 2fr 80px;
-      gap: 30px;
-      padding: 30px 0;
-      border-bottom: 1px solid var(--linea);
-    }
-
-    .predica h3 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    .predica p {
-      margin: 0;
-      color: var(--gris);
-      font-size: 14px;
-    }
-
-    /* SOBRE MÍ */
-
-    .sobre {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-    }
-
-    .sobre h2 {
-      font-size: 60px;
-      margin: 0 0 40px;
-    }
-
-    .sobre p {
-      max-width: 650px;
-      font-family: "Source Serif 4", serif;
-      font-size: 21px;
-      line-height: 1.55;
-    }
-
-    /* FOOTER */
-
-    footer {
-      max-width: var(--max);
-      margin: auto;
-      padding: 40px 30px 60px;
-      display: flex;
-      justify-content: space-between;
-      color: var(--gris);
-      font-size: 12px;
-    }
-
-    footer strong {
-      color: var(--texto);
-      letter-spacing: .12em;
-    }
-
-    /* MÓVIL */
-
-    @media (max-width: 760px) {
-
-      header {
-        padding: 25px 22px;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        padding: 90px 22px 100px;
-      }
-
-      h1 {
-        font-size: 52px;
-      }
-
-      section {
-        padding: 85px 22px;
-      }
-
-      .titulo-seccion {
-        display: block;
-        margin-bottom: 50px;
-      }
-
-      .titulo-seccion h2 {
-        font-size: 45px;
-        margin-top: 15px;
-      }
-
-      .ensayos {
-        grid-template-columns: 1fr;
-      }
-
-      .ensayo {
-        border-right: 0;
-        border-bottom: 1px solid var(--linea);
-        margin: 0;
-        padding: 30px 0;
-      }
-
-      .libro-contenido {
-        grid-template-columns: 1fr;
-        gap: 60px;
-      }
-
-      .portada {
-        width: 235px;
-        height: 330px;
-      }
-
-      .informacion-libro h3 {
-        font-size: 45px;
-      }
-
-      .predica article {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .sobre {
-        display: block;
-      }
-
-      .sobre h2 {
-        font-size: 48px;
-      }
-
-      .sobre p {
-        font-size: 19px;
-      }
-
-      footer {
-        display: block;
-        padding: 35px 22px 50px;
-      }
-
-    }
-
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-<header>
+    <header class="site-header">
 
-  <a class="logo" href="#">MARIANO CORICA</a>
+        <a href="index.html" class="site-name">
+            MARIANO CORICA
+        </a>
 
-  <nav>
-    <a href="#ensayos">Ensayos</a>
-    <a href="#libros">Libros</a>
-    <a href="#predicaciones">Predicaciones</a>
-    <a href="#sobre-mi">Sobre mí</a>
-  </nav>
+        <nav class="main-nav">
+            <a href="#libros">Libros</a>
+            <a href="#predicaciones">Predicaciones</a>
+            <a href="#entrevistas">Entrevistas</a>
+            <a href="#sobre-mi">Sobre mí</a>
+        </nav>
 
-</header>
+    </header>
 
 
-<main>
+    <main>
 
-  <!-- PORTADA -->
+        <!-- PRESENTACIÓN -->
 
-  <div class="hero">
+        <section class="hero">
 
-    <div class="etiqueta">
-      Teología · Cultura · Pensamiento
-    </div>
+            <p class="eyebrow">Teólogo y escritor</p>
 
-    <h1>
-      Ensayos sobre<br>
-      <em>Evangelio, fe,<br>
-      cultura y pensamiento.</em>
-    </h1>
+            <h1>
+                Pensar la fe<br>
+                <em>desde el Evangelio.</em>
+            </h1>
 
-    <p class="intro">
-      Un espacio para pensar la fe cristiana en diálogo
-      con la historia, la filosofía y la cultura contemporánea.
-    </p>
+            <p class="hero-text">
+                Una obra teológica y literaria dedicada a pensar
+                el Evangelio, la Iglesia, la cultura y la experiencia
+                cristiana en el mundo contemporáneo.
+            </p>
 
-    <a class="enlace" href="#ensayos">
-      Explorar los textos →
-    </a>
+        </section>
 
-  </div>
 
+        <!-- LIBRO DESTACADO -->
 
-  <!-- ENSAYOS -->
+        <section class="featured-book">
 
-  <section id="ensayos">
+            <div class="section-label">
+                Libro más reciente
+            </div>
 
-    <div class="titulo-seccion">
+            <div class="featured-content">
 
-      <div class="etiqueta">
-        01 — Ensayos
-      </div>
+                <div class="book-placeholder">
+                    <span>EL VACIAMIENTO<br>DE DIOS</span>
+                    <small>2026</small>
+                </div>
 
-      <h2>
-        Escribir para<br>
-        <em>pensar la fe.</em>
-      </h2>
+                <div class="featured-info">
 
-    </div>
+                    <p class="book-year">2026</p>
 
+                    <h2>
+                        El vaciamiento<br>
+                        de Dios
+                    </h2>
 
-    <article class="destacado">
+                    <p>
+                        El vaciamiento de Dios explora el sentido
+                        teológico y misional de la kenosis de Dios
+                        en Cristo. A partir de Filipenses 2:5–8,
+                        el libro examina el modo en que Dios cumple
+                        su misión revelándose plenamente al mundo,
+                        asumiendo la vulnerabilidad, el sufrimiento
+                        y el rechazo.
+                    </p>
 
-      <div class="etiqueta">
-        Proyecto en desarrollo · Teología y cultura
-      </div>
+                    <a href="libros/el-vaciamiento-de-dios.html"
+                       class="text-link">
+                        Conocer el libro →
+                    </a>
 
-      <h3>
-        Postsecularidad:<br>
-        la domesticación de la fe<br>
-        en la nueva modernidad
-      </h3>
+                </div>
 
-      <p>
-        Una investigación sobre las formas contemporáneas
-        en que la fe es absorbida, administrada y reinterpretada
-        dentro de los sistemas de inmanencia de la cultura actual.
-      </p>
+            </div>
 
-      <a class="enlace" href="#">
-        Leer sobre el proyecto →
-      </a>
+        </section>
 
-    </article>
 
+        <!-- LIBROS -->
 
-    <div class="ensayos">
+        <section id="libros" class="books-section">
 
-      <article class="ensayo">
+            <div class="section-heading">
 
-        <div class="etiqueta">Teología</div>
+                <p class="section-label">
+                    Obra publicada
+                </p>
 
-        <h3>La fe en el límite</h3>
+                <h2>Libros</h2>
 
-        <p>
-          Apuntes sobre revelación, trascendencia y ruptura.
-        </p>
+            </div>
 
-        <a class="leer" href="#">Leer →</a>
 
-      </article>
+            <div class="books-grid">
 
+                <article class="book-card">
 
-      <article class="ensayo">
+                    <div class="book-cover">
+                        <span>
+                            EL VACIAMIENTO<br>
+                            DE DIOS
+                        </span>
+                    </div>
 
-        <div class="etiqueta">Hermenéutica</div>
+                    <p class="book-year">2026</p>
 
-        <h3>Evangelio y mundo</h3>
+                    <h3>El vaciamiento de Dios</h3>
 
-        <p>
-          Una lectura de la fe como forma de habitar la historia.
-        </p>
+                    <a href="libros/el-vaciamiento-de-dios.html">
+                        Ver libro →
+                    </a>
 
-        <a class="leer" href="#">Leer →</a>
+                </article>
 
-      </article>
 
+                <article class="book-card">
 
-      <article class="ensayo">
+                    <div class="book-cover">
+                        <span>
+                            EL EVANGELIO<br>
+                            EN ROMANOS
+                        </span>
+                    </div>
 
-        <div class="etiqueta">Cultura</div>
+                    <p class="book-year">2024</p>
 
-        <h3>La crisis de la inmanencia</h3>
+                    <h3>El evangelio en Romanos</h3>
 
-        <p>
-          Notas sobre modernidad, secularización y esperanza.
-        </p>
+                    <a href="libros/el-evangelio-en-romanos.html">
+                        Ver libro →
+                    </a>
 
-        <a class="leer" href="#">Leer →</a>
+                </article>
 
-      </article>
 
-    </div>
+                <article class="book-card">
 
-  </section>
+                    <div class="book-cover">
+                        <span>
+                            POST<br>
+                            RELIGIÓN
+                        </span>
+                    </div>
 
+                    <p class="book-year">2023</p>
 
-  <!-- LIBROS -->
+                    <h3>PostReligión</h3>
 
-  <section id="libros" class="libro">
+                    <a href="libros/postreligion.html">
+                        Ver libro →
+                    </a>
 
-    <div class="titulo-seccion">
+                </article>
 
-      <div class="etiqueta">
-        02 — Libros
-      </div>
 
-      <h2>
-        Una obra<br>
-        <em>en construcción.</em>
-      </h2>
+                <article class="book-card">
 
-    </div>
+                    <div class="book-cover">
+                        <span>
+                            ENSAYO<br>
+                            SOBRE<br>
+                            EL EVANGELIO
+                        </span>
+                    </div>
 
+                    <p class="book-year">2022</p>
 
-    <div class="libro-contenido">
+                    <h3>Ensayo sobre el evangelio</h3>
 
-      <div class="portada">
+                    <a href="libros/ensayo-sobre-el-evangelio.html">
+                        Ver libro →
+                    </a>
 
-        <small>MARIANO CORICA</small>
+                </article>
 
-        <strong>
-          POST<br>
-          SECULARIDAD
-        </strong>
+            </div>
 
-        <small>
-          La domesticación de la fe<br>
-          en la nueva modernidad
-        </small>
+        </section>
 
-      </div>
 
+        <!-- PREDICACIONES -->
 
-      <div class="informacion-libro">
+        <section id="predicaciones" class="media-section">
 
-        <div class="etiqueta">
-          Ensayo teológico
+            <div class="section-heading">
+
+                <p class="section-label">
+                    YouTube
+                </p>
+
+                <h2>Predicaciones</h2>
+
+            </div>
+
+            <div class="media-intro">
+
+                <p>
+                    Predicaciones y reflexiones bíblicas
+                    disponibles en YouTube.
+                </p>
+
+                <a href="#" class="text-link">
+                    Ver predicaciones →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ENTREVISTAS -->
+
+        <section id="entrevistas" class="media-section">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    Conversaciones
+                </p>
+
+                <h2>Entrevistas</h2>
+
+            </div>
+
+            <div class="media-intro">
+
+                <p>
+                    Conversaciones y entrevistas sobre
+                    teología, fe, cultura y pensamiento.
+                </p>
+
+                <a href="#" class="text-link">
+                    Ver entrevistas →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE MÍ -->
+
+        <section id="sobre-mi" class="about-section">
+
+            <div class="section-label">
+                Sobre mí
+            </div>
+
+            <div class="about-content">
+
+                <h2>
+                    Mariano<br>
+                    Corica
+                </h2>
+
+                <div>
+
+                    <p>
+                        Teólogo y escritor. Su trabajo se desarrolla
+                        en torno a la teología, el Evangelio, la Iglesia
+                        y las transformaciones culturales del mundo
+                        contemporáneo.
+                    </p>
+
+                    <a href="#" class="text-link">
+                        Más sobre Mariano →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LYCHNOS -->
+
+        <section class="lychnos">
+
+            <div>
+
+                <p class="section-label">
+                    Proyecto editorial
+                </p>
+
+                <h2>Espacio Lychnos</h2>
+
+            </div>
+
+            <a href="#" class="text-link">
+                Visitar Espacio Lychnos →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div>
+            <strong>MARIANO CORICA</strong>
+            <p>Teólogo y escritor</p>
         </div>
 
-        <h3>Postsecularidad</h3>
-
-        <p>
-          La modernidad no desapareció: cambió de forma.
-          Este libro explora cómo la fe religiosa continúa
-          presente en la cultura contemporánea, pero bajo
-          nuevas condiciones de administración, absorción
-          y domesticación.
-        </p>
-
-        <p>
-          <strong>En desarrollo</strong>
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PREDICACIONES -->
-
-  <section id="predicaciones">
-
-    <div class="titulo-seccion">
-
-      <div class="etiqueta">
-        03 — Predicaciones
-      </div>
-
-      <h2>
-        La palabra<br>
-        <em>en acto.</em>
-      </h2>
-
-    </div>
-
-
-    <div class="predica">
-
-      <article>
-
-        <div class="etiqueta">
-          Filipenses 3:12–14
+        <div>
+            <p>© 2026 Mariano Corica</p>
         </div>
 
-        <h3>Una cosa hago</h3>
-
-        <p>
-          Olvidando lo que queda atrás y extendiéndome
-          a lo que está delante.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <div class="etiqueta">
-          2 Corintios 13:4
-        </div>
-
-        <h3>El poder de la debilidad</h3>
-
-        <p>
-          La vida de Cristo manifestada en la paradoja
-          de la debilidad.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <div class="etiqueta">
-          Salmos
-        </div>
-
-        <h3>Cuando el mundo no cierra</h3>
-
-        <p>
-          La angustia, la mentira y la violencia
-          ante la presencia de Dios.
-        </p>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- SOBRE MÍ -->
-
-  <section id="sobre-mi" class="sobre">
-
-    <div class="etiqueta">
-      04 — Sobre mí
-    </div>
-
-    <div>
-
-      <h2>
-        Teología como<br>
-        <em>pregunta abierta.</em>
-      </h2>
-
-      <p>
-        Mariano Corica es teólogo y escritor.
-        Su trabajo se sitúa en el cruce entre teología,
-        filosofía, historia, hermenéutica y cultura.
-      </p>
-
-      <p>
-        Este sitio reúne ensayos, investigaciones y
-        predicaciones que buscan pensar la fe cristiana
-        sin separarla de las preguntas que atraviesan
-        nuestro tiempo.
-      </p>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  <div>
-    <strong>MARIANO CORICA</strong>
-    <p>Teología · Cultura · Pensamiento</p>
-  </div>
-
-  <div>
-    © 2026 Mariano Corica
-  </div>
-
-</footer>
+    </footer>
 
 </body>
+
 </html>
