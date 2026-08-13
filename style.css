@@ -102,7 +102,7 @@ em {
 
 
 /* =========================================================
-   ETIQUETAS EDITORIALES
+   ETIQUETAS
    ========================================================= */
 
 .eyebrow,
@@ -239,7 +239,7 @@ em {
 
 
 /* =========================================================
-   SECCIONES GENERALES
+   SECCIONES
    ========================================================= */
 
 .section-heading {
@@ -276,9 +276,6 @@ em {
 
     align-items: center;
 }
-
-
-/* ---------- PORTADA PROVISORIA ---------- */
 
 .book-placeholder {
     width: 100%;
@@ -424,33 +421,31 @@ em {
    ========================================================= */
 
 .messages-section {
-    max-width: 1000px;
+    max-width: var(--max-width);
 
     margin: 0 auto;
 
-    padding: 105px 32px 120px;
-}
-
-.messages-grid {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 90px;
+    padding: 0 32px 110px;
 }
 
 .message-card {
-    width: 100%;
+    display: grid;
+
+    grid-template-columns: 1.65fr 1fr;
+
+    gap: 65px;
+
+    align-items: center;
+
+    padding: 65px 0;
+
+    border-bottom: 1px solid var(--line);
 }
 
 .message-video {
     width: 100%;
 
-    max-width: 900px;
-
     aspect-ratio: 16 / 9;
-
-    margin-bottom: 25px;
 
     background: #181817;
 }
@@ -465,7 +460,7 @@ em {
 }
 
 .message-info {
-    max-width: 700px;
+    max-width: 430px;
 }
 
 .message-info h2 {
@@ -473,11 +468,11 @@ em {
 
     font-size: clamp(2.3rem, 4vw, 4rem);
 
-    letter-spacing: -0.035em;
+    letter-spacing: -0.04em;
 }
 
 .message-info .text-link {
-    margin-top: 17px;
+    margin-top: 18px;
 }
 
 
@@ -524,6 +519,10 @@ em {
     border: 0;
 }
 
+.interview-info {
+    max-width: 430px;
+}
+
 .interview-info h2 {
     margin-top: 12px;
 
@@ -540,7 +539,7 @@ em {
 
 
 /* =========================================================
-   YOUTUBE / PLAYLIST
+   YOUTUBE
    ========================================================= */
 
 .youtube-section {
@@ -687,7 +686,7 @@ em {
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 950px) {
@@ -709,6 +708,7 @@ em {
         gap: 40px 28px;
     }
 
+    .message-card,
     .interview {
         grid-template-columns: 1.4fr 1fr;
 
@@ -719,7 +719,7 @@ em {
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
@@ -752,7 +752,6 @@ em {
 
     .featured-book,
     .books-section,
-    .messages-section,
     .media-section,
     .about-section {
         padding:
@@ -787,27 +786,24 @@ em {
     }
 
 
-    .messages-grid {
-        gap: 65px;
-    }
-
-    .message-video {
-        max-width: 100%;
-    }
-
-
-    .interviews-section {
+    .messages-section {
         padding:
             0 22px
             80px;
     }
 
+    .message-card,
     .interview {
         grid-template-columns: 1fr;
 
         gap: 28px;
 
         padding: 50px 0;
+    }
+
+    .message-info,
+    .interview-info {
+        max-width: 100%;
     }
 
 
@@ -840,6 +836,17 @@ em {
     .about-content p {
         font-size: 1.1rem;
     }
+
+
+    .site-footer {
+        padding:
+            35px 22px
+            50px;
+
+        display: block;
+    }
+
+}
 
 
     .site-footer {
