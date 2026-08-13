@@ -1,0 +1,711 @@
+/* =========================================================
+   MARIANO CORICA
+   Teólogo y escritor
+   ========================================================= */
+
+
+/* ---------- BASE ---------- */
+
+:root {
+    --background: #f4f1ea;
+    --surface: #e9e5dc;
+    --text: #181817;
+    --muted: #706d66;
+    --line: #d4d0c7;
+    --accent: #6d5744;
+
+    --max-width: 1240px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- TIPOGRAFÍA ---------- */
+
+h1,
+h2,
+h3 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+h1 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    letter-spacing: -0.055em;
+}
+
+h2 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    letter-spacing: -0.045em;
+}
+
+h3 {
+    font-size: 1.65rem;
+}
+
+em {
+    font-style: italic;
+}
+
+
+/* ---------- ENLACES ---------- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    border-bottom: 1px solid var(--text);
+
+    padding-bottom: 4px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.text-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+
+/* ---------- ETIQUETAS ---------- */
+
+.eyebrow,
+.section-label,
+.book-year {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 28px 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.site-name {
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.main-nav {
+
+    display: flex;
+
+    gap: 30px;
+
+    font-size: 0.78rem;
+}
+
+.main-nav a:hover {
+
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 145px 32px 170px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.hero .eyebrow {
+
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+
+    max-width: 1050px;
+}
+
+.hero-text {
+
+    max-width: 570px;
+
+    margin-top: 45px;
+
+    color: var(--muted);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   LIBRO DESTACADO
+   ========================================================= */
+
+.featured-book {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 120px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.featured-content {
+
+    margin-top: 60px;
+
+    display: grid;
+
+    grid-template-columns: 420px 1fr;
+
+    gap: 110px;
+
+    align-items: center;
+}
+
+
+/* ---------- PORTADA PROVISORIA ---------- */
+
+.book-placeholder {
+
+    width: 100%;
+
+    aspect-ratio: 0.72;
+
+    background: #24231f;
+
+    color: #f4f1ea;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    box-shadow: 18px 20px 0 var(--line);
+}
+
+.book-placeholder span {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 2.4rem;
+
+    line-height: 0.95;
+}
+
+.book-placeholder small {
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+
+.featured-info {
+
+    max-width: 620px;
+}
+
+.featured-info .book-year {
+
+    margin-bottom: 20px;
+}
+
+.featured-info h2 {
+
+    margin-bottom: 35px;
+}
+
+.featured-info > p:not(.book-year) {
+
+    color: var(--muted);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.08rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   LIBROS
+   ========================================================= */
+
+.books-section {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 120px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+
+    margin-bottom: 70px;
+}
+
+.section-heading h2 {
+
+    margin-top: 15px;
+}
+
+.books-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 35px;
+}
+
+.book-card {
+
+    min-width: 0;
+}
+
+.book-cover {
+
+    aspect-ratio: 0.72;
+
+    margin-bottom: 25px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--line);
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: flex-end;
+}
+
+.book-cover span {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.55rem;
+
+    line-height: 0.95;
+}
+
+.book-card .book-year {
+
+    margin-bottom: 8px;
+}
+
+.book-card h3 {
+
+    margin-bottom: 15px;
+
+    line-height: 1.1;
+}
+
+.book-card a {
+
+    font-size: 0.78rem;
+
+    border-bottom: 1px solid var(--text);
+
+    padding-bottom: 3px;
+}
+
+
+/* =========================================================
+   PREDICACIONES / ENTREVISTAS
+   ========================================================= */
+
+.media-section {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 120px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.media-intro {
+
+    display: grid;
+
+    grid-template-columns: 1fr 2fr;
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+.media-intro p {
+
+    max-width: 580px;
+
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.35rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SOBRE MÍ
+   ========================================================= */
+
+.about-section {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 120px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.about-content {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    margin-top: 60px;
+}
+
+.about-content h2 {
+
+    font-size: clamp(4rem, 7vw, 7rem);
+}
+
+.about-content p {
+
+    max-width: 540px;
+
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.35rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   LYCHNOS
+   ========================================================= */
+
+.lychnos {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 80px 32px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.lychnos h2 {
+
+    margin-top: 15px;
+
+    font-size: clamp(3rem, 5vw, 5rem);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 45px 32px 70px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+}
+
+.site-footer strong {
+
+    color: var(--text);
+
+    letter-spacing: 0.12em;
+}
+
+.site-footer p {
+
+    margin: 7px 0 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .featured-content {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 50px;
+    }
+
+    .books-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .site-header {
+
+        padding: 22px;
+
+    }
+
+    .main-nav {
+
+        display: none;
+
+    }
+
+    .hero {
+
+        padding:
+            90px 22px
+            100px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 3.7rem;
+
+    }
+
+    .hero-text {
+
+        font-size: 1.1rem;
+
+    }
+
+    .featured-book,
+    .books-section,
+    .media-section,
+    .about-section {
+
+        padding:
+            85px 22px;
+
+    }
+
+    .featured-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+    }
+
+    .book-placeholder {
+
+        max-width: 300px;
+
+    }
+
+    .books-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+
+    }
+
+    .book-cover {
+
+        padding: 18px;
+
+    }
+
+    .book-cover span {
+
+        font-size: 1.15rem;
+
+    }
+
+    .media-intro {
+
+        display: block;
+
+    }
+
+    .media-intro p {
+
+        font-size: 1.15rem;
+
+    }
+
+    .about-content {
+
+        display: block;
+
+    }
+
+    .about-content h2 {
+
+        margin-bottom: 50px;
+
+    }
+
+    .about-content p {
+
+        font-size: 1.15rem;
+
+    }
+
+    .lychnos {
+
+        padding:
+            60px 22px;
+
+        display: block;
+
+    }
+
+    .site-footer {
+
+        padding:
+            35px 22px 50px;
+
+        display: block;
+
+    }
+
+}
