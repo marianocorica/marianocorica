@@ -5,13 +5,16 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Mensajes — Mariano A. Corica</title>
+    <title>Predicaciones — Mariano A. Corica</title>
 
     <meta
         name="description"
-        content="Mensajes de Mariano A. Corica sobre el Evangelio, la fe y la vida cristiana."
+        content="Predicaciones de Mariano A. Corica sobre el Evangelio, la fe y la vida cristiana."
     >
 
     <meta
@@ -34,6 +37,49 @@
         href="../style.css"
     >
 
+    <style>
+        .messages-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 32px 110px;
+        }
+
+        .messages-grid .message-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            align-items: start;
+            padding: 65px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .messages-grid .message-video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .messages-grid .message-info {
+            max-width: 700px;
+        }
+
+        .messages-grid .message-info h2 {
+            font-size: clamp(2.3rem, 4vw, 4rem);
+        }
+
+        @media (max-width: 700px) {
+
+            .messages-grid {
+                padding: 0 22px 80px;
+            }
+
+            .messages-grid .message-card {
+                gap: 24px;
+                padding: 50px 0;
+            }
+
+        }
+    </style>
+
 </head>
 
 
@@ -49,6 +95,7 @@
         MARIANO A. CORICA
     </a>
 
+
     <nav class="main-nav">
 
         <a href="../index.html#libros">
@@ -56,7 +103,7 @@
         </a>
 
         <a href="index.html">
-            Mensajes
+            Predicaciones
         </a>
 
         <a href="../entrevistas/index.html">
@@ -82,11 +129,11 @@
         </p>
 
         <h1>
-            Mensajes
+            Predicaciones
         </h1>
 
         <p class="hero-text">
-            Una selección de mensajes y enseñanzas
+            Una selección de predicaciones y enseñanzas
             de Mariano A. Corica.
         </p>
 
@@ -95,8 +142,6 @@
 
     <section class="messages-grid">
 
-
-        <!-- MENSAJE -->
 
         <article class="message-card">
 
@@ -113,10 +158,11 @@
 
             </div>
 
+
             <div class="message-info">
 
                 <p class="section-label">
-                    Mensaje
+                    Predicación
                 </p>
 
                 <h2>
@@ -137,8 +183,6 @@
         </article>
 
 
-        <!-- MENSAJE -->
-
         <article class="message-card">
 
             <div class="message-video">
@@ -154,10 +198,11 @@
 
             </div>
 
+
             <div class="message-info">
 
                 <p class="section-label">
-                    Mensaje
+                    Predicación
                 </p>
 
                 <h2>
