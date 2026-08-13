@@ -1,21 +1,28 @@
 /* =========================================================
-   MARIANO CORICA
+   MARIANO A. CORICA
    Teólogo y escritor
    ========================================================= */
 
 
-/* ---------- BASE ---------- */
+/* =========================================================
+   VARIABLES
+   ========================================================= */
 
 :root {
     --background: #f4f1ea;
-    --surface: #e9e5dc;
-    --text: #181817;
-    --muted: #706d66;
-    --line: #d4d0c7;
+    --surface: #ebe7de;
+    --text: #191918;
+    --muted: #77736b;
+    --line: #d5d1c8;
     --accent: #6d5744;
 
     --max-width: 1240px;
 }
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -27,6 +34,7 @@ html {
 
 body {
     margin: 0;
+
     background: var(--background);
     color: var(--text);
 
@@ -36,10 +44,24 @@ body {
         sans-serif;
 
     line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+iframe {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 
-/* ---------- TIPOGRAFÍA ---------- */
+/* =========================================================
+   TIPOGRAFÍA
+   ========================================================= */
 
 h1,
 h2,
@@ -53,21 +75,25 @@ h3 {
 
     font-weight: 400;
 
-    line-height: 1.05;
+    line-height: 1.04;
 }
 
 h1 {
-    font-size: clamp(4rem, 8vw, 8rem);
+    font-size: clamp(4rem, 7vw, 7.5rem);
+
     letter-spacing: -0.055em;
 }
 
 h2 {
-    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
     letter-spacing: -0.045em;
 }
 
 h3 {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
+
+    line-height: 1.1;
 }
 
 em {
@@ -75,33 +101,9 @@ em {
 }
 
 
-/* ---------- ENLACES ---------- */
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.text-link {
-    display: inline-block;
-
-    margin-top: 25px;
-
-    border-bottom: 1px solid var(--text);
-
-    padding-bottom: 4px;
-
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.text-link:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-
-/* ---------- ETIQUETAS ---------- */
+/* =========================================================
+   ETIQUETAS EDITORIALES
+   ========================================================= */
 
 .eyebrow,
 .section-label,
@@ -110,7 +112,9 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.72rem;
+    font-size: 0.7rem;
+
+    line-height: 1.2;
 
     text-transform: uppercase;
 
@@ -119,16 +123,44 @@ a {
 
 
 /* =========================================================
+   ENLACES
+   ========================================================= */
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 24px;
+
+    padding-bottom: 4px;
+
+    border-bottom: 1px solid var(--text);
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.text-link:hover {
+    color: var(--accent);
+
+    border-color: var(--accent);
+}
+
+
+/* =========================================================
    HEADER
    ========================================================= */
 
 .site-header {
-
     max-width: var(--max-width);
 
     margin: 0 auto;
 
-    padding: 28px 32px;
+    padding: 26px 32px;
 
     display: flex;
 
@@ -140,8 +172,7 @@ a {
 }
 
 .site-name {
-
-    font-size: 0.8rem;
+    font-size: 0.78rem;
 
     font-weight: 700;
 
@@ -149,16 +180,20 @@ a {
 }
 
 .main-nav {
-
     display: flex;
 
-    gap: 30px;
+    align-items: center;
 
-    font-size: 0.78rem;
+    gap: 28px;
+
+    font-size: 0.76rem;
+}
+
+.main-nav a {
+    transition: color 0.2s ease;
 }
 
 .main-nav a:hover {
-
     color: var(--accent);
 }
 
@@ -168,33 +203,439 @@ a {
    ========================================================= */
 
 .hero {
-
     max-width: var(--max-width);
 
     margin: 0 auto;
 
-    padding: 145px 32px 170px;
+    padding: 115px 32px 110px;
 
     border-bottom: 1px solid var(--line);
 }
 
 .hero .eyebrow {
-
-    margin-bottom: 35px;
+    margin-bottom: 28px;
 }
 
 .hero h1 {
-
     max-width: 1050px;
 }
 
 .hero-text {
+    max-width: 600px;
 
-    max-width: 570px;
-
-    margin-top: 45px;
+    margin: 35px 0 0;
 
     color: var(--muted);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.2rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SECCIONES GENERALES
+   ========================================================= */
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    margin-top: 13px;
+}
+
+
+/* =========================================================
+   LIBRO DESTACADO
+   ========================================================= */
+
+.featured-book {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 105px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.featured-content {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: 390px 1fr;
+
+    gap: 95px;
+
+    align-items: center;
+}
+
+
+/* ---------- PORTADA PROVISORIA ---------- */
+
+.book-placeholder {
+    width: 100%;
+
+    aspect-ratio: 0.72;
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: #24231f;
+
+    color: #f4f1ea;
+
+    box-shadow:
+        16px 18px 0 var(--line);
+}
+
+.book-placeholder span {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 2.25rem;
+
+    line-height: 0.95;
+}
+
+.book-placeholder small {
+    font-size: 0.68rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+.featured-info {
+    max-width: 650px;
+}
+
+.featured-info .book-year {
+    margin-bottom: 17px;
+}
+
+.featured-info h2 {
+    margin-bottom: 30px;
+}
+
+.featured-info > p:not(.book-year) {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.06rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   LIBROS
+   ========================================================= */
+
+.books-section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 105px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.books-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+.book-card {
+    min-width: 0;
+}
+
+.book-cover {
+    aspect-ratio: 0.72;
+
+    margin-bottom: 22px;
+
+    padding: 24px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    background: var(--surface);
+
+    border: 1px solid var(--line);
+}
+
+.book-cover span {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.45rem;
+
+    line-height: 0.95;
+}
+
+.book-card .book-year {
+    margin-bottom: 8px;
+}
+
+.book-card h3 {
+    margin-bottom: 14px;
+}
+
+.book-card a {
+    font-size: 0.76rem;
+
+    border-bottom: 1px solid var(--text);
+
+    padding-bottom: 3px;
+}
+
+
+/* =========================================================
+   MENSAJES
+   ========================================================= */
+
+.messages-section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 105px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.messages-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 55px;
+}
+
+.message-card {
+    min-width: 0;
+}
+
+.message-video {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    margin-bottom: 22px;
+
+    background: #181817;
+}
+
+.message-video iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+}
+
+.message-info h2 {
+    margin-top: 12px;
+
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.message-info .text-link {
+    margin-top: 16px;
+}
+
+
+/* =========================================================
+   ENTREVISTAS
+   ========================================================= */
+
+.interviews-section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 0 32px 110px;
+}
+
+.interview {
+    display: grid;
+
+    grid-template-columns: 1.65fr 1fr;
+
+    gap: 65px;
+
+    align-items: center;
+
+    padding: 65px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.interview-video {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #181817;
+}
+
+.interview-video iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+}
+
+.interview-info h2 {
+    margin-top: 12px;
+
+    font-size: clamp(2.3rem, 4vw, 4rem);
+}
+
+.interview-info .text-link {
+    margin-top: 18px;
+}
+
+.interviews-playlist {
+    padding-top: 45px;
+}
+
+
+/* =========================================================
+   YOUTUBE / PLAYLIST
+   ========================================================= */
+
+.youtube-section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 0 32px 110px;
+}
+
+.youtube-container {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #181817;
+}
+
+.youtube-container iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   MEDIA INTRO
+   ========================================================= */
+
+.media-section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 105px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.media-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+.media-intro p {
+    max-width: 580px;
+
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SOBRE MÍ
+   ========================================================= */
+
+.about-section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 105px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    margin-top: 55px;
+}
+
+.about-content h2 {
+    font-size: clamp(4rem, 6.5vw, 6.5rem);
+}
+
+.about-content p {
+    max-width: 540px;
+
+    margin: 0;
 
     font-family:
         Georgia,
@@ -208,521 +649,198 @@ a {
 
 
 /* =========================================================
-   LIBRO DESTACADO
-   ========================================================= */
-
-.featured-book {
-
-    max-width: var(--max-width);
-
-    margin: 0 auto;
-
-    padding: 120px 32px;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.featured-content {
-
-    margin-top: 60px;
-
-    display: grid;
-
-    grid-template-columns: 420px 1fr;
-
-    gap: 110px;
-
-    align-items: center;
-}
-
-
-/* ---------- PORTADA PROVISORIA ---------- */
-
-.book-placeholder {
-
-    width: 100%;
-
-    aspect-ratio: 0.72;
-
-    background: #24231f;
-
-    color: #f4f1ea;
-
-    padding: 35px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    box-shadow: 18px 20px 0 var(--line);
-}
-
-.book-placeholder span {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 2.4rem;
-
-    line-height: 0.95;
-}
-
-.book-placeholder small {
-
-    font-size: 0.7rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.12em;
-}
-
-
-.featured-info {
-
-    max-width: 620px;
-}
-
-.featured-info .book-year {
-
-    margin-bottom: 20px;
-}
-
-.featured-info h2 {
-
-    margin-bottom: 35px;
-}
-
-.featured-info > p:not(.book-year) {
-
-    color: var(--muted);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 1.08rem;
-
-    line-height: 1.65;
-}
-
-
-/* =========================================================
-   LIBROS
-   ========================================================= */
-
-.books-section {
-
-    max-width: var(--max-width);
-
-    margin: 0 auto;
-
-    padding: 120px 32px;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.section-heading {
-
-    margin-bottom: 70px;
-}
-
-.section-heading h2 {
-
-    margin-top: 15px;
-}
-
-.books-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 35px;
-}
-
-.book-card {
-
-    min-width: 0;
-}
-
-.book-cover {
-
-    aspect-ratio: 0.72;
-
-    margin-bottom: 25px;
-
-    background: var(--surface);
-
-    border: 1px solid var(--line);
-
-    padding: 25px;
-
-    display: flex;
-
-    align-items: flex-end;
-}
-
-.book-cover span {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 1.55rem;
-
-    line-height: 0.95;
-}
-
-.book-card .book-year {
-
-    margin-bottom: 8px;
-}
-
-.book-card h3 {
-
-    margin-bottom: 15px;
-
-    line-height: 1.1;
-}
-
-.book-card a {
-
-    font-size: 0.78rem;
-
-    border-bottom: 1px solid var(--text);
-
-    padding-bottom: 3px;
-}
-
-
-/* =========================================================
-   PREDICACIONES / ENTREVISTAS
-   ========================================================= */
-
-.media-section {
-
-    max-width: var(--max-width);
-
-    margin: 0 auto;
-
-    padding: 120px 32px;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.media-intro {
-
-    display: grid;
-
-    grid-template-columns: 1fr 2fr;
-
-    gap: 50px;
-
-    align-items: start;
-}
-
-.media-intro p {
-
-    max-width: 580px;
-
-    margin: 0;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 1.35rem;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   SOBRE MÍ
-   ========================================================= */
-
-.about-section {
-
-    max-width: var(--max-width);
-
-    margin: 0 auto;
-
-    padding: 120px 32px;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.about-content {
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 80px;
-
-    margin-top: 60px;
-}
-
-.about-content h2 {
-
-    font-size: clamp(4rem, 7vw, 7rem);
-}
-
-.about-content p {
-
-    max-width: 540px;
-
-    margin: 0;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 1.35rem;
-
-    line-height: 1.55;
-}
-
-
-/* =========================================================
-   LYCHNOS
-   ========================================================= */
-
-.lychnos {
-
-    max-width: var(--max-width);
-
-    margin: 0 auto;
-
-    padding: 80px 32px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.lychnos h2 {
-
-    margin-top: 15px;
-
-    font-size: clamp(3rem, 5vw, 5rem);
-}
-
-
-/* =========================================================
    FOOTER
    ========================================================= */
 
 .site-footer {
-
     max-width: var(--max-width);
 
     margin: 0 auto;
 
-    padding: 45px 32px 70px;
+    padding: 42px 32px 65px;
 
     display: flex;
+
+    align-items: flex-start;
 
     justify-content: space-between;
 
     color: var(--muted);
 
-    font-size: 0.72rem;
+    font-size: 0.7rem;
 }
 
 .site-footer strong {
-
     color: var(--text);
 
     letter-spacing: 0.12em;
 }
 
 .site-footer p {
-
-    margin: 7px 0 0;
+    margin: 6px 0 0;
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE — TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
     .main-nav {
         gap: 18px;
     }
 
     .featured-content {
+        grid-template-columns: 330px 1fr;
 
-        grid-template-columns: 1fr 1fr;
-
-        gap: 50px;
+        gap: 55px;
     }
 
     .books-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
+
+        gap: 40px 28px;
+    }
+
+    .interview {
+        grid-template-columns: 1.4fr 1fr;
+
+        gap: 40px;
     }
 
 }
 
 
-@media (max-width: 650px) {
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
 
     .site-header {
-
         padding: 22px;
-
     }
 
     .main-nav {
-
         display: none;
-
     }
 
+
     .hero {
-
         padding:
-            90px 22px
-            100px;
-
+            85px 22px
+            80px;
     }
 
     .hero h1 {
-
         font-size: 3.7rem;
-
     }
 
     .hero-text {
+        margin-top: 28px;
 
-        font-size: 1.1rem;
-
+        font-size: 1.08rem;
     }
+
 
     .featured-book,
     .books-section,
+    .messages-section,
     .media-section,
     .about-section {
-
         padding:
-            85px 22px;
-
+            80px 22px;
     }
 
-    .featured-content {
 
+    .featured-content {
         grid-template-columns: 1fr;
 
-        gap: 60px;
-
+        gap: 55px;
     }
 
     .book-placeholder {
-
-        max-width: 300px;
-
+        max-width: 310px;
     }
 
+
     .books-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
 
-        grid-template-columns: 1fr 1fr;
-
-        gap: 25px;
-
+        gap: 30px 20px;
     }
 
     .book-cover {
-
-        padding: 18px;
-
+        padding: 17px;
     }
 
     .book-cover span {
-
-        font-size: 1.15rem;
-
+        font-size: 1.1rem;
     }
 
+
+    .messages-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+
+    .interviews-section {
+        padding:
+            0 22px
+            80px;
+    }
+
+    .interview {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 50px 0;
+    }
+
+
+    .youtube-section {
+        padding:
+            0 22px
+            80px;
+    }
+
+
     .media-intro {
-
         display: block;
-
     }
 
     .media-intro p {
-
-        font-size: 1.15rem;
-
+        font-size: 1.1rem;
     }
 
-    .about-content {
 
+    .about-content {
         display: block;
 
+        margin-top: 45px;
     }
 
     .about-content h2 {
-
-        margin-bottom: 50px;
-
+        margin-bottom: 45px;
     }
 
     .about-content p {
-
-        font-size: 1.15rem;
-
+        font-size: 1.1rem;
     }
 
-    .lychnos {
-
-        padding:
-            60px 22px;
-
-        display: block;
-
-    }
 
     .site-footer {
-
         padding:
-            35px 22px 50px;
+            35px 22px
+            50px;
 
         display: block;
-
     }
 
-}
-/* =========================================================
-   YOUTUBE
-   ========================================================= */
-
-.youtube-container {
-    width: 100%;
-    margin-top: 60px;
-    aspect-ratio: 16 / 9;
-    background: #181817;
-}
-
-.youtube-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
 }
