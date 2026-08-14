@@ -40,23 +40,62 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 /* =========================================================
    VARIABLES
    ========================================================= */
 
 :root {
-    --background: #f4f1ea;
-    --surface: #ebe7de;
-    --text: #191918;
-    --muted: #77736b;
-    --line: #d5d1c8;
-    --accent: #6d5744;
+    --background: #f8f8f6;
+    --surface: #f1f1ef;
+    --text: #171716;
+    --muted: #70706b;
+    --line: #d9d9d5;
+    --accent: #55554f;
 
     --max-width: 1240px;
 
-    --serif: "Libertinus Serif", Georgia, "Times New Roman", serif;
-    --display: "Century 751 Semi", "Century Schoolbook", Georgia, serif;
+    --serif:
+        "Libertinus Serif",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    --display:
+        "Century 751 Semi",
+        "Century Schoolbook",
+        Georgia,
+        serif;
+
+    --heading:
+        "IBM Plex Sans",
+        Arial,
+        Helvetica,
+        sans-serif;
 }
 
 
@@ -100,7 +139,7 @@ a {
 
 
 /* =========================================================
-   TIPOGRAFÍA
+   TIPOGRAFÍA GENERAL
    ========================================================= */
 
 h1,
@@ -108,38 +147,38 @@ h2,
 h3 {
     margin: 0;
 
-    font-family: var(--serif);
+    font-family: var(--heading);
 
-    font-weight: 400;
+    font-weight: 500;
 
-    line-height: 1.04;
-}
-
-h1 {
-    font-size: clamp(4rem, 7vw, 7.5rem);
-
-    letter-spacing: -0.045em;
-}
-
-h2 {
-    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: 0.98;
 
     letter-spacing: -0.035em;
 }
 
-h3 {
-    font-size: 1.55rem;
+h1 {
+    font-size: clamp(4rem, 7vw, 7.5rem);
+}
 
-    line-height: 1.1;
+h2 {
+    font-size: clamp(2.8rem, 5vw, 5rem);
+}
+
+h3 {
+    font-size: 1.5rem;
+
+    line-height: 1.05;
 }
 
 em {
+    font-family: var(--serif);
+
     font-style: italic;
 }
 
 
 /* =========================================================
-   NOMBRE
+   IDENTIDAD DEL AUTOR
    ========================================================= */
 
 .site-name {
@@ -162,9 +201,9 @@ em {
 .book-title {
     font-family: var(--display);
 
-    text-transform: uppercase;
-
     font-weight: 400;
+
+    text-transform: uppercase;
 
     letter-spacing: 0.025em;
 
@@ -183,15 +222,15 @@ em {
 
     color: var(--muted);
 
-    font-family: var(--serif);
+    font-family: var(--heading);
 
-    font-size: 0.72rem;
+    font-size: 0.68rem;
 
     line-height: 1.2;
 
     text-transform: uppercase;
 
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
 }
 
 
@@ -208,11 +247,11 @@ em {
 
     border-bottom: 1px solid var(--text);
 
-    font-family: var(--serif);
+    font-family: var(--heading);
 
-    font-size: 0.82rem;
+    font-size: 0.76rem;
 
-    font-weight: 700;
+    font-weight: 600;
 
     transition:
         color 0.2s ease,
@@ -253,9 +292,9 @@ em {
 
     gap: 28px;
 
-    font-family: var(--serif);
+    font-family: var(--heading);
 
-    font-size: 0.82rem;
+    font-size: 0.78rem;
 }
 
 .main-nav a {
@@ -356,9 +395,9 @@ em {
 
     justify-content: space-between;
 
-    background: #24231f;
+    background: #1b1b1a;
 
-    color: #f4f1ea;
+    color: var(--background);
 
     box-shadow:
         16px 18px 0 var(--line);
@@ -369,6 +408,8 @@ em {
 
     font-size: 2.25rem;
 
+    font-weight: 400;
+
     text-transform: uppercase;
 
     letter-spacing: 0.025em;
@@ -377,7 +418,7 @@ em {
 }
 
 .book-placeholder small {
-    font-family: var(--serif);
+    font-family: var(--heading);
 
     font-size: 0.68rem;
 
@@ -459,6 +500,8 @@ em {
 
     font-size: 1.45rem;
 
+    font-weight: 400;
+
     text-transform: uppercase;
 
     letter-spacing: 0.025em;
@@ -475,9 +518,9 @@ em {
 }
 
 .book-card a {
-    font-family: var(--serif);
+    font-family: var(--heading);
 
-    font-size: 0.78rem;
+    font-size: 0.76rem;
 
     border-bottom: 1px solid var(--text);
 
@@ -813,6 +856,10 @@ em {
     }
 
 
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
+
     .hero {
         padding:
             85px 22px
@@ -830,6 +877,10 @@ em {
     }
 
 
+    /* -----------------------------------------------------
+       SECCIONES
+       ----------------------------------------------------- */
+
     .featured-book,
     .books-section,
     .media-section,
@@ -838,6 +889,10 @@ em {
             80px 22px;
     }
 
+
+    /* -----------------------------------------------------
+       LIBRO DESTACADO
+       ----------------------------------------------------- */
 
     .featured-content {
         grid-template-columns: 1fr;
@@ -849,6 +904,10 @@ em {
         max-width: 310px;
     }
 
+
+    /* -----------------------------------------------------
+       LIBROS
+       ----------------------------------------------------- */
 
     .books-grid {
         grid-template-columns:
@@ -865,6 +924,10 @@ em {
         font-size: 1.1rem;
     }
 
+
+    /* -----------------------------------------------------
+       MENSAJES
+       ----------------------------------------------------- */
 
     .messages-section {
         padding:
@@ -887,12 +950,20 @@ em {
     }
 
 
+    /* -----------------------------------------------------
+       YOUTUBE
+       ----------------------------------------------------- */
+
     .youtube-section {
         padding:
             0 22px
             80px;
     }
 
+
+    /* -----------------------------------------------------
+       MEDIA
+       ----------------------------------------------------- */
 
     .media-intro {
         display: block;
@@ -902,6 +973,10 @@ em {
         font-size: 1.1rem;
     }
 
+
+    /* -----------------------------------------------------
+       SOBRE MÍ
+       ----------------------------------------------------- */
 
     .about-content {
         display: block;
@@ -918,6 +993,10 @@ em {
     }
 
 
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
     .site-footer {
         padding:
             35px 22px
@@ -925,13 +1004,4 @@ em {
 
         display: block;
     }
-}
-    .site-footer {
-        padding:
-            35px 22px
-            50px;
-
-        display: block;
-    }
-
 }
