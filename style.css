@@ -5,35 +5,6 @@
 
 
 /* =========================================================
-   FUENTES
-   ========================================================= */
-
-@font-face {
-    font-family: "Century 751 Semi";
-    src: url("/fonts/century-751-semi.woff2") format("woff2");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Grandesing Neue Roman";
-    src: url("/fonts/grandesing-neue-roman.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Libertinus Serif";
-    src: url("/fonts/libertinus-serif.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-
-/* =========================================================
    VARIABLES
    ========================================================= */
 
@@ -68,13 +39,11 @@ body {
     color: var(--text);
 
     font-family:
-        "Libertinus Serif",
-        Georgia,
-        serif;
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    font-size: 18px;
-
-    line-height: 1.65;
+    line-height: 1.6;
 
     -webkit-font-smoothing: antialiased;
 }
@@ -94,69 +63,31 @@ a {
    TIPOGRAFÍA
    ========================================================= */
 
-/*
-   GRANDESING NEUE ROMAN
-   Estructura editorial:
-   secciones, subtítulos y navegación.
-*/
-
 h1,
 h2,
-h3,
-.section-heading,
-.section-label,
-.eyebrow,
-.main-nav {
+h3 {
+    margin: 0;
+
     font-family:
-        "Grandesing Neue Roman",
         Georgia,
+        "Times New Roman",
         serif;
 
     font-weight: 400;
+
+    line-height: 1.04;
 }
-
-
-/*
-   CENTURY 751 SEMI
-   Identidad de las obras:
-   libros, títulos de obras y títulos editoriales destacados.
-*/
-
-.book-title,
-.work-title,
-.editorial-title,
-.book-cover-title,
-.book-placeholder-title {
-    font-family:
-        "Century 751 Semi",
-        Georgia,
-        serif;
-
-    font-weight: 600;
-
-    text-transform: uppercase;
-}
-
-
-/*
-   GRANDESING
-   Títulos principales del sitio.
-*/
 
 h1 {
     font-size: clamp(4rem, 7vw, 7.5rem);
 
-    line-height: 0.98;
-
-    letter-spacing: -0.035em;
+    letter-spacing: -0.055em;
 }
 
 h2 {
     font-size: clamp(2.8rem, 5vw, 5rem);
 
-    line-height: 1;
-
-    letter-spacing: -0.025em;
+    letter-spacing: -0.045em;
 }
 
 h3 {
@@ -181,11 +112,13 @@ em {
 
     color: var(--muted);
 
-    font-size: 0.72rem;
+    font-size: 0.7rem;
 
-    line-height: 1.25;
+    line-height: 1.2;
 
-    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    letter-spacing: 0.16em;
 }
 
 
@@ -202,11 +135,9 @@ em {
 
     border-bottom: 1px solid var(--text);
 
-    font-family:
-        "Grandesing Neue Roman",
-        serif;
+    font-size: 0.78rem;
 
-    font-size: 0.85rem;
+    font-weight: 600;
 
     transition:
         color 0.2s ease,
@@ -229,7 +160,7 @@ em {
 
     margin: 0 auto;
 
-    padding: 27px 32px;
+    padding: 26px 32px;
 
     display: flex;
 
@@ -241,13 +172,11 @@ em {
 }
 
 .site-name {
-    font-family:
-        "Grandesing Neue Roman",
-        serif;
+    font-size: 0.78rem;
 
-    font-size: 0.95rem;
+    font-weight: 700;
 
-    letter-spacing: 0.04em;
+    letter-spacing: 0.14em;
 }
 
 .main-nav {
@@ -255,9 +184,9 @@ em {
 
     align-items: center;
 
-    gap: 30px;
+    gap: 28px;
 
-    font-size: 0.9rem;
+    font-size: 0.76rem;
 }
 
 .main-nav a {
@@ -278,13 +207,13 @@ em {
 
     margin: 0 auto;
 
-    padding: 125px 32px 120px;
+    padding: 115px 32px 110px;
 
     border-bottom: 1px solid var(--line);
 }
 
 .hero .eyebrow {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 .hero h1 {
@@ -292,15 +221,20 @@ em {
 }
 
 .hero-text {
-    max-width: 650px;
+    max-width: 600px;
 
-    margin: 38px 0 0;
+    margin: 35px 0 0;
 
     color: var(--muted);
 
-    font-size: 1.18rem;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    line-height: 1.65;
+    font-size: 1.2rem;
+
+    line-height: 1.55;
 }
 
 
@@ -309,11 +243,11 @@ em {
    ========================================================= */
 
 .section-heading {
-    margin-bottom: 60px;
+    margin-bottom: 55px;
 }
 
 .section-heading h2 {
-    margin-top: 12px;
+    margin-top: 13px;
 }
 
 
@@ -326,13 +260,13 @@ em {
 
     margin: 0 auto;
 
-    padding: 110px 32px;
+    padding: 105px 32px;
 
     border-bottom: 1px solid var(--line);
 }
 
 .featured-content {
-    margin-top: 55px;
+    margin-top: 50px;
 
     display: grid;
 
@@ -342,9 +276,6 @@ em {
 
     align-items: center;
 }
-
-
-/* ---------- PORTADA PROVISORIA ---------- */
 
 .book-placeholder {
     width: 100%;
@@ -367,20 +298,23 @@ em {
         16px 18px 0 var(--line);
 }
 
-.book-placeholder-title {
+.book-placeholder span {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     font-size: 2.25rem;
 
     line-height: 0.95;
 }
 
 .book-placeholder small {
-    font-family:
-        "Grandesing Neue Roman",
-        serif;
+    font-size: 0.68rem;
 
-    font-size: 0.72rem;
+    text-transform: uppercase;
 
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
 }
 
 .featured-info {
@@ -388,7 +322,7 @@ em {
 }
 
 .featured-info .book-year {
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
 .featured-info h2 {
@@ -400,9 +334,14 @@ em {
 
     color: var(--muted);
 
-    font-size: 1.08rem;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    line-height: 1.7;
+    font-size: 1.06rem;
+
+    line-height: 1.65;
 }
 
 
@@ -415,7 +354,7 @@ em {
 
     margin: 0 auto;
 
-    padding: 110px 32px;
+    padding: 105px 32px;
 
     border-bottom: 1px solid var(--line);
 }
@@ -426,7 +365,7 @@ em {
     grid-template-columns:
         repeat(4, 1fr);
 
-    gap: 32px;
+    gap: 30px;
 }
 
 .book-card {
@@ -436,7 +375,7 @@ em {
 .book-cover {
     aspect-ratio: 0.72;
 
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 
     padding: 24px;
 
@@ -449,26 +388,39 @@ em {
     border: 1px solid var(--line);
 }
 
-.book-cover-title {
+.book-cover span {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     font-size: 1.45rem;
 
-    line-height: 0.98;
+    line-height: 0.95;
 }
 
 .book-card .book-year {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 }
 
 .book-card h3 {
     margin-bottom: 14px;
 }
 
+.book-card a {
+    font-size: 0.76rem;
+
+    border-bottom: 1px solid var(--text);
+
+    padding-bottom: 3px;
+}
+
 
 /* =========================================================
-   PREDICACIONES
+   MENSAJES
    ========================================================= */
 
-.predicaciones-section {
+.messages-section {
     max-width: var(--max-width);
 
     margin: 0 auto;
@@ -476,7 +428,7 @@ em {
     padding: 0 32px 110px;
 }
 
-.predicacion {
+.message-card {
     display: grid;
 
     grid-template-columns: 1.65fr 1fr;
@@ -490,7 +442,7 @@ em {
     border-bottom: 1px solid var(--line);
 }
 
-.predicacion-video {
+.message-video {
     width: 100%;
 
     aspect-ratio: 16 / 9;
@@ -498,7 +450,7 @@ em {
     background: #181817;
 }
 
-.predicacion-video iframe {
+.message-video iframe {
     width: 100%;
     height: 100%;
 
@@ -507,17 +459,19 @@ em {
     border: 0;
 }
 
-.predicacion-info {
+.message-info {
     max-width: 430px;
 }
 
-.predicacion-info h2 {
+.message-info h2 {
     margin-top: 12px;
 
     font-size: clamp(2.3rem, 4vw, 4rem);
+
+    letter-spacing: -0.04em;
 }
 
-.predicacion-info .text-link {
+.message-info .text-link {
     margin-top: 18px;
 }
 
@@ -615,6 +569,46 @@ em {
 
 
 /* =========================================================
+   MEDIA INTRO
+   ========================================================= */
+
+.media-section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 105px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.media-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+.media-intro p {
+    max-width: 580px;
+
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
    SOBRE MÍ
    ========================================================= */
 
@@ -623,7 +617,7 @@ em {
 
     margin: 0 auto;
 
-    padding: 110px 32px;
+    padding: 105px 32px;
 
     border-bottom: 1px solid var(--line);
 }
@@ -647,9 +641,14 @@ em {
 
     margin: 0;
 
-    font-size: 1.18rem;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    line-height: 1.7;
+    font-size: 1.25rem;
+
+    line-height: 1.55;
 }
 
 
@@ -672,17 +671,13 @@ em {
 
     color: var(--muted);
 
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .site-footer strong {
     color: var(--text);
 
-    font-family:
-        "Grandesing Neue Roman",
-        serif;
-
-    letter-spacing: 0.04em;
+    letter-spacing: 0.12em;
 }
 
 .site-footer p {
@@ -713,12 +708,13 @@ em {
         gap: 40px 28px;
     }
 
-    .predicacion,
+    .message-card,
     .interview {
         grid-template-columns: 1.4fr 1fr;
 
         gap: 40px;
     }
+
 }
 
 
@@ -727,10 +723,6 @@ em {
    ========================================================= */
 
 @media (max-width: 700px) {
-
-    body {
-        font-size: 17px;
-    }
 
     .site-header {
         padding: 22px;
@@ -760,6 +752,7 @@ em {
 
     .featured-book,
     .books-section,
+    .media-section,
     .about-section {
         padding:
             80px 22px;
@@ -788,19 +781,18 @@ em {
         padding: 17px;
     }
 
-    .book-cover-title {
-        font-size: 1.05rem;
+    .book-cover span {
+        font-size: 1.1rem;
     }
 
 
-    .predicaciones-section,
-    .interviews-section {
+    .messages-section {
         padding:
             0 22px
             80px;
     }
 
-    .predicacion,
+    .message-card,
     .interview {
         grid-template-columns: 1fr;
 
@@ -809,7 +801,7 @@ em {
         padding: 50px 0;
     }
 
-    .predicacion-info,
+    .message-info,
     .interview-info {
         max-width: 100%;
     }
@@ -819,6 +811,15 @@ em {
         padding:
             0 22px
             80px;
+    }
+
+
+    .media-intro {
+        display: block;
+    }
+
+    .media-intro p {
+        font-size: 1.1rem;
     }
 
 
@@ -833,7 +834,7 @@ em {
     }
 
     .about-content p {
-        font-size: 1.08rem;
+        font-size: 1.1rem;
     }
 
 
@@ -844,4 +845,5 @@ em {
 
         display: block;
     }
+
 }
