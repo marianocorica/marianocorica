@@ -70,11 +70,12 @@
    ========================================================= */
 
 :root {
-    --background: #f8f8f6;
-    --surface: #f1f1ef;
+    --background: #ffffff;
+    --surface: #f5f5f3;
+
     --text: #171716;
     --muted: #70706b;
-    --line: #d9d9d5;
+    --line: #ddddda;
     --accent: #55554f;
 
     --max-width: 1240px;
@@ -182,7 +183,7 @@ em {
    ========================================================= */
 
 .site-name {
-    font-family: var(--display);
+    font-family: var(--display) !important;
 
     font-size: 0.9rem;
 
@@ -198,12 +199,20 @@ em {
    TÍTULOS DE LIBROS
    ========================================================= */
 
-.book-title {
-    font-family: var(--display);
+/*
+   Todo nombre de libro debe utilizar Century 751 Semi.
+   Esta regla tiene prioridad sobre las reglas de tarjetas,
+   placeholders y otros elementos secundarios.
+*/
 
-    font-weight: 400;
+.book-title,
+.book-placeholder span,
+.book-cover span {
+    font-family: var(--display) !important;
 
-    text-transform: uppercase;
+    font-weight: 400 !important;
+
+    text-transform: uppercase !important;
 
     letter-spacing: 0.025em;
 
@@ -404,17 +413,7 @@ em {
 }
 
 .book-placeholder span {
-    font-family: var(--display);
-
     font-size: 2.25rem;
-
-    font-weight: 400;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.025em;
-
-    line-height: 0.95;
 }
 
 .book-placeholder small {
@@ -496,17 +495,7 @@ em {
 }
 
 .book-cover span {
-    font-family: var(--display);
-
     font-size: 1.45rem;
-
-    font-weight: 400;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.025em;
-
-    line-height: 0.95;
 }
 
 .book-card .book-year {
