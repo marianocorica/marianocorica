@@ -199,12 +199,6 @@ em {
    TÍTULOS DE LIBROS
    ========================================================= */
 
-/*
-   Todo nombre de libro debe utilizar Century 751 Semi.
-   Esta regla tiene prioridad sobre las reglas de tarjetas,
-   placeholders y otros elementos secundarios.
-*/
-
 .book-title,
 .book-placeholder span,
 .book-cover span {
@@ -709,6 +703,89 @@ em {
 
 
 /* =========================================================
+   REDES SOCIALES
+   ========================================================= */
+
+.social-section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 105px 32px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.social-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+.social-intro {
+    max-width: 430px;
+}
+
+.social-intro h2 {
+    margin-top: 13px;
+}
+
+.social-links {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.social-link {
+    padding: 24px 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    border-top: 1px solid var(--line);
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.social-link:hover {
+    color: var(--accent);
+
+    border-color: var(--accent);
+}
+
+.social-name {
+    font-family: var(--heading);
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+.social-handle {
+    font-family: var(--serif);
+
+    font-size: 1.05rem;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
    SOBRE MÍ
    ========================================================= */
 
@@ -725,25 +802,64 @@ em {
 .about-content {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 150px 1fr;
 
-    gap: 80px;
+    gap: 55px;
 
-    margin-top: 55px;
+    align-items: center;
+
+    margin-top: 30px;
 }
 
-.about-content h2 {
-    font-size: clamp(4rem, 6.5vw, 6.5rem);
+.about-photo {
+    width: 150px;
+
+    height: 150px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
 }
 
-.about-content p {
-    max-width: 540px;
+.about-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.about-author {
+    max-width: 760px;
+}
+
+.about-author h2 {
+    margin-bottom: 22px;
+
+    font-family: var(--display);
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: 0.015em;
+
+    text-transform: uppercase;
+}
+
+.about-author p {
+    max-width: 650px;
 
     margin: 0;
 
+    color: var(--muted);
+
     font-family: var(--serif);
 
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 
     line-height: 1.55;
 }
@@ -819,6 +935,12 @@ em {
 
         gap: 40px;
     }
+
+    .social-content {
+        grid-template-columns: 1fr 1.5fr;
+
+        gap: 40px;
+    }
 }
 
 
@@ -831,6 +953,11 @@ em {
     body {
         font-size: 17px;
     }
+
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
 
     .site-header {
         padding: 22px;
@@ -873,6 +1000,7 @@ em {
     .featured-book,
     .books-section,
     .media-section,
+    .social-section,
     .about-section {
         padding:
             80px 22px;
@@ -964,129 +1092,8 @@ em {
 
 
     /* -----------------------------------------------------
-       SOBRE MÍ
+       REDES SOCIALES
        ----------------------------------------------------- */
-
-    .about-content {
-        display: block;
-
-        margin-top: 45px;
-    }
-
-    .about-content h2 {
-        margin-bottom: 45px;
-    }
-
-    .about-content p {
-        font-size: 1.1rem;
-    }
-
-
-    /* -----------------------------------------------------
-       FOOTER
-       ----------------------------------------------------- */
-
-    .site-footer {
-        padding:
-            35px 22px
-            50px;
-
-        display: block;
-    }
-}
-/* =========================================================
-   REDES SOCIALES
-   ========================================================= */
-
-.social-section {
-    max-width: var(--max-width);
-
-    margin: 0 auto;
-
-    padding: 105px 32px;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.social-content {
-    display: grid;
-
-    grid-template-columns: 1fr 1.5fr;
-
-    gap: 60px;
-
-    align-items: start;
-}
-
-.social-intro {
-    max-width: 430px;
-}
-
-.social-intro h2 {
-    margin-top: 13px;
-}
-
-.social-links {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.social-link {
-    padding: 24px 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
-
-    border-top: 1px solid var(--line);
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
-}
-
-.social-link:hover {
-    color: var(--accent);
-
-    border-color: var(--accent);
-}
-
-.social-name {
-    font-family: var(--heading);
-
-    font-size: 0.72rem;
-
-    font-weight: 600;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.12em;
-}
-
-.social-handle {
-    font-family: var(--serif);
-
-    font-size: 1.05rem;
-
-    line-height: 1.3;
-}
-
-
-/* =========================================================
-   REDES SOCIALES — MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .social-section {
-        padding:
-            80px 22px;
-    }
 
     .social-content {
         display: block;
@@ -1102,6 +1109,52 @@ em {
         gap: 0;
     }
 
+    .social-link {
+        padding: 20px 0;
+    }
+
+
+    /* -----------------------------------------------------
+       SOBRE MÍ
+       ----------------------------------------------------- */
+
+    .about-content {
+        grid-template-columns: 90px 1fr;
+
+        gap: 25px;
+
+        margin-top: 25px;
+    }
+
+    .about-photo {
+        width: 90px;
+
+        height: 90px;
+    }
+
+    .about-author h2 {
+        margin-bottom: 15px;
+
+        font-size: 2rem;
+    }
+
+    .about-author p {
+        font-size: 1rem;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
+    .site-footer {
+        padding:
+            35px 22px
+            50px;
+
+        display: block;
+    }
+}
     .social-link {
         padding: 20px 0;
     }
