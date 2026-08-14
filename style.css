@@ -802,19 +802,23 @@ em {
 .about-content {
     display: grid;
 
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 125px 1fr 1.7fr;
 
-    gap: 55px;
+    gap: 45px;
 
     align-items: center;
 
-    margin-top: 30px;
+    margin-top: 45px;
 }
 
-.about-photo {
-    width: 150px;
 
-    height: 150px;
+/* ---------------------------------------------------------
+   FOTO
+   --------------------------------------------------------- */
+
+.about-photo {
+    width: 125px;
+    height: 125px;
 
     overflow: hidden;
 
@@ -830,40 +834,47 @@ em {
     object-fit: cover;
 }
 
-.about-author {
-    max-width: 760px;
-}
 
-.about-author h2 {
-    margin-bottom: 22px;
+/* ---------------------------------------------------------
+   NOMBRE
+   --------------------------------------------------------- */
+
+.about-name h3 {
+    margin: 0;
 
     font-family: var(--display);
 
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: clamp(2.2rem, 3.5vw, 4rem);
 
     font-weight: 400;
 
-    line-height: 0.95;
+    line-height: 0.92;
 
     letter-spacing: 0.015em;
 
     text-transform: uppercase;
 }
 
-.about-author p {
-    max-width: 650px;
 
+/* ---------------------------------------------------------
+   DESCRIPCIÓN
+   --------------------------------------------------------- */
+
+.about-text {
+    max-width: 580px;
+}
+
+.about-text p {
     margin: 0;
 
     color: var(--muted);
 
     font-family: var(--serif);
 
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 
     line-height: 1.55;
 }
-
 
 /* =========================================================
    FOOTER
