@@ -5,6 +5,43 @@
 
 
 /* =========================================================
+   FUENTES
+   ========================================================= */
+
+@font-face {
+    font-family: "Libertinus Serif";
+    src: url("/fonts/LibertinusSerif-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Libertinus Serif";
+    src: url("/fonts/LibertinusSerif-Italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Libertinus Serif";
+    src: url("/fonts/LibertinusSerif-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Century 751 Semi";
+    src: url("/fonts/Century751Semi.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* =========================================================
    VARIABLES
    ========================================================= */
 
@@ -17,6 +54,9 @@
     --accent: #6d5744;
 
     --max-width: 1240px;
+
+    --serif: "Libertinus Serif", Georgia, "Times New Roman", serif;
+    --display: "Century 751 Semi", "Century Schoolbook", Georgia, serif;
 }
 
 
@@ -38,14 +78,14 @@ body {
     background: var(--background);
     color: var(--text);
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: var(--serif);
+
+    font-size: 18px;
 
     line-height: 1.6;
 
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 img,
@@ -68,10 +108,7 @@ h2,
 h3 {
     margin: 0;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: var(--serif);
 
     font-weight: 400;
 
@@ -81,13 +118,13 @@ h3 {
 h1 {
     font-size: clamp(4rem, 7vw, 7.5rem);
 
-    letter-spacing: -0.055em;
+    letter-spacing: -0.045em;
 }
 
 h2 {
     font-size: clamp(2.8rem, 5vw, 5rem);
 
-    letter-spacing: -0.045em;
+    letter-spacing: -0.035em;
 }
 
 h3 {
@@ -102,6 +139,40 @@ em {
 
 
 /* =========================================================
+   NOMBRE
+   ========================================================= */
+
+.site-name {
+    font-family: var(--display);
+
+    font-size: 0.9rem;
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   TÍTULOS DE LIBROS
+   ========================================================= */
+
+.book-title {
+    font-family: var(--display);
+
+    text-transform: uppercase;
+
+    font-weight: 400;
+
+    letter-spacing: 0.025em;
+
+    line-height: 0.98;
+}
+
+
+/* =========================================================
    ETIQUETAS
    ========================================================= */
 
@@ -112,7 +183,9 @@ em {
 
     color: var(--muted);
 
-    font-size: 0.7rem;
+    font-family: var(--serif);
+
+    font-size: 0.72rem;
 
     line-height: 1.2;
 
@@ -135,9 +208,11 @@ em {
 
     border-bottom: 1px solid var(--text);
 
-    font-size: 0.78rem;
+    font-family: var(--serif);
 
-    font-weight: 600;
+    font-size: 0.82rem;
+
+    font-weight: 700;
 
     transition:
         color 0.2s ease,
@@ -171,14 +246,6 @@ em {
     border-bottom: 1px solid var(--line);
 }
 
-.site-name {
-    font-size: 0.78rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.14em;
-}
-
 .main-nav {
     display: flex;
 
@@ -186,7 +253,9 @@ em {
 
     gap: 28px;
 
-    font-size: 0.76rem;
+    font-family: var(--serif);
+
+    font-size: 0.82rem;
 }
 
 .main-nav a {
@@ -227,10 +296,7 @@ em {
 
     color: var(--muted);
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: var(--serif);
 
     font-size: 1.2rem;
 
@@ -299,17 +365,20 @@ em {
 }
 
 .book-placeholder span {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: var(--display);
 
     font-size: 2.25rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.025em;
 
     line-height: 0.95;
 }
 
 .book-placeholder small {
+    font-family: var(--serif);
+
     font-size: 0.68rem;
 
     text-transform: uppercase;
@@ -334,10 +403,7 @@ em {
 
     color: var(--muted);
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: var(--serif);
 
     font-size: 1.06rem;
 
@@ -389,12 +455,13 @@ em {
 }
 
 .book-cover span {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: var(--display);
 
     font-size: 1.45rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.025em;
 
     line-height: 0.95;
 }
@@ -408,7 +475,9 @@ em {
 }
 
 .book-card a {
-    font-size: 0.76rem;
+    font-family: var(--serif);
+
+    font-size: 0.78rem;
 
     border-bottom: 1px solid var(--text);
 
@@ -468,7 +537,7 @@ em {
 
     font-size: clamp(2.3rem, 4vw, 4rem);
 
-    letter-spacing: -0.04em;
+    letter-spacing: -0.035em;
 }
 
 .message-info .text-link {
@@ -527,6 +596,8 @@ em {
     margin-top: 12px;
 
     font-size: clamp(2.3rem, 4vw, 4rem);
+
+    letter-spacing: -0.035em;
 }
 
 .interview-info .text-link {
@@ -597,10 +668,7 @@ em {
 
     margin: 0;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: var(--serif);
 
     font-size: 1.25rem;
 
@@ -641,10 +709,7 @@ em {
 
     margin: 0;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: var(--serif);
 
     font-size: 1.25rem;
 
@@ -671,13 +736,21 @@ em {
 
     color: var(--muted);
 
-    font-size: 0.7rem;
+    font-family: var(--serif);
+
+    font-size: 0.72rem;
 }
 
 .site-footer strong {
     color: var(--text);
 
-    letter-spacing: 0.12em;
+    font-family: var(--display);
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
 }
 
 .site-footer p {
@@ -714,7 +787,6 @@ em {
 
         gap: 40px;
     }
-
 }
 
 
@@ -724,8 +796,16 @@ em {
 
 @media (max-width: 700px) {
 
+    body {
+        font-size: 17px;
+    }
+
     .site-header {
         padding: 22px;
+    }
+
+    .site-name {
+        font-size: 0.78rem;
     }
 
     .main-nav {
@@ -838,6 +918,14 @@ em {
     }
 
 
+    .site-footer {
+        padding:
+            35px 22px
+            50px;
+
+        display: block;
+    }
+}
     .site-footer {
         padding:
             35px 22px
