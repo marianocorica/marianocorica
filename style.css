@@ -1124,40 +1124,40 @@ main {
        ----------------------------------------------------- */
 
     .site-header-inner {
-    padding: 22px;
-}
+        padding: 22px;
+    }
 
-.site-name {
-    font-size: 0.78rem;
-}
+    .site-name {
+        font-size: 0.78rem;
+    }
 
-.main-nav {
-    display: none;
-}
+    .main-nav {
+        display: none;
+    }
 
-.header-right {
-    gap: 0;
-}
+    .header-right {
+        gap: 0;
+    }
 
-.header-social {
-    padding-left: 0;
-    border-left: 0;
-    gap: 12px;
-}
+    .header-social {
+        padding-left: 0;
+        border-left: 0;
+        gap: 12px;
+    }
 
-.header-social a {
-    width: 19px;
-    height: 19px;
-}
+    .header-social a {
+        width: 19px;
+        height: 19px;
+    }
 
-.header-social svg {
-    width: 16px;
-    height: 16px;
-}
+    .header-social svg {
+        width: 16px;
+        height: 16px;
+    }
 
-main {
-    padding-top: 70px;
-}
+    main {
+        padding-top: 70px;
+    }
 
 
     /* -----------------------------------------------------
@@ -1165,9 +1165,7 @@ main {
        ----------------------------------------------------- */
 
     .hero {
-        padding:
-            85px 22px
-            80px;
+        padding: 85px 22px 80px;
     }
 
     .hero h1 {
@@ -1176,7 +1174,6 @@ main {
 
     .hero-text {
         margin-top: 28px;
-
         font-size: 1.08rem;
     }
 
@@ -1190,224 +1187,185 @@ main {
     .media-section,
     .social-section,
     .about-section {
-        padding:
-            80px 22px;
+        padding: 80px 22px;
     }
 
 
-    /* =========================================================
-   LIBRO DESTACADO
-   ========================================================= */
+    /* =====================================================
+       LIBRO DESTACADO
+       ===================================================== */
 
-.featured-book {
-    max-width: var(--max-width);
+    .featured-content {
+        margin-top: 40px;
 
-    margin: 0 auto;
+        display: block;
+    }
 
-    padding: 105px 32px;
+    .book-placeholder {
+        width: 100%;
+        max-width: 330px;
 
-    border-bottom: 1px solid var(--line);
-}
+        margin: 0 auto 45px;
 
-.featured-content {
-    margin-top: 50px;
+        aspect-ratio: 0.72;
 
-    display: grid;
+        overflow: hidden;
 
-    grid-template-columns: 390px 1fr;
+        background: transparent;
 
-    gap: 95px;
+        border: none;
 
-    align-items: center;
-}
+        box-shadow: none;
+    }
 
+    .book-placeholder img {
+        width: 100%;
+        height: 100%;
 
-/* =========================================================
-   PORTADA DEL LIBRO DESTACADO
-   ========================================================= */
+        display: block;
 
-.book-placeholder {
-    width: 100%;
-    max-width: 390px;
+        object-fit: cover;
+    }
 
-    aspect-ratio: 0.72;
+    .featured-info {
+        width: 100%;
+        max-width: none;
+    }
 
-    overflow: hidden;
+    .featured-info .book-year {
+        margin-bottom: 15px;
+    }
 
-    background: transparent;
+    .featured-info .book-title {
+        margin: 0 0 25px;
 
-    border: none;
+        font-family: var(--display);
 
-    box-shadow: none;
-}
+        font-size: clamp(2.7rem, 12vw, 4rem);
 
-.book-placeholder img {
-    width: 100%;
-    height: 100%;
+        font-weight: 400;
 
-    display: block;
+        line-height: 0.95;
 
-    object-fit: cover;
-}
+        letter-spacing: 0.02em;
 
-/* ---------------------------------------------------------
-   INFORMACIÓN
-   --------------------------------------------------------- */
+        text-transform: uppercase;
+    }
 
-.featured-info {
-    max-width: 650px;
-}
+    .featured-info > p:not(.book-year) {
+        margin: 0;
 
-.featured-info .book-year {
-    margin-bottom: 17px;
-}
+        color: var(--muted);
 
-.featured-info .book-title {
-    margin: 0 0 30px;
+        font-family: var(--serif);
 
-    font-family: var(--display);
+        font-size: 1.06rem;
 
-    font-size: clamp(2.8rem, 5vw, 5rem);
+        line-height: 1.6;
+    }
 
-    font-weight: 400;
 
-    line-height: 0.95;
+    /* =====================================================
+       LIBROS
+       ===================================================== */
 
-    letter-spacing: 0.02em;
+    .books-section {
+        padding: 80px 22px;
+    }
 
-    text-transform: uppercase;
-}
+    .books-grid {
+        display: grid;
 
-.featured-info > p:not(.book-year) {
-    margin: 0;
+        grid-template-columns: 1fr;
 
-    color: var(--muted);
+        gap: 55px;
+    }
 
-    font-family: var(--serif);
+    .book-card {
+        width: 100%;
+        min-width: 0;
+    }
 
-    font-size: 1.06rem;
 
-    line-height: 1.65;
-}
+    /* -----------------------------------------------------
+       PORTADA
+       ----------------------------------------------------- */
 
+    .book-cover {
+        width: 100%;
 
-/* =========================================================
-   LIBROS
-   ========================================================= */
+        aspect-ratio: 0.72;
 
-.books-section {
-    max-width: var(--max-width);
+        margin-bottom: 20px;
 
-    margin: 0 auto;
+        padding: 0;
 
-    padding: 105px 32px;
+        display: block;
 
-    border-bottom: 1px solid var(--line);
-}
+        overflow: hidden;
 
-.books-grid {
-    display: grid;
+        background: transparent;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+        border: none;
+    }
 
-    gap: 30px;
-}
+    .book-cover img {
+        width: 100%;
+        height: 100%;
 
-.book-card {
-    min-width: 0;
-}
+        display: block;
 
+        object-fit: cover;
 
-/* =========================================================
-   PORTADAS DE LIBROS
-   ========================================================= */
+        transition: transform 0.25s ease;
+    }
 
-.book-cover {
-    width: 100%;
+    .book-cover:hover img {
+        transform: scale(1.02);
+    }
 
-    aspect-ratio: 0.72;
 
-    margin-bottom: 22px;
+    /* -----------------------------------------------------
+       INFORMACIÓN DEL LIBRO
+       ----------------------------------------------------- */
 
-    display: block;
+    .book-card .book-year {
+        margin-bottom: 8px;
+    }
 
-    overflow: hidden;
+    .book-card .book-title {
+        margin: 0 0 14px;
 
-    background: transparent;
+        font-family: var(--display);
 
-    border: none;
-}
+        font-size: 1.55rem;
 
-.book-cover img {
-    width: 100%;
-    height: 100%;
+        font-weight: 400;
 
-    display: block;
+        line-height: 0.98;
 
-    object-fit: cover;
+        letter-spacing: 0.025em;
 
-    transition: transform 0.25s ease;
-}
+        text-transform: uppercase;
+    }
 
-.book-cover:hover img {
-    transform: scale(1.02);
-}
+    .book-link {
+        font-family: var(--heading);
 
-   
-/* ---------------------------------------------------------
-   TÍTULOS
-   --------------------------------------------------------- */
+        font-size: 0.76rem;
 
-.book-card .book-year {
-    margin-bottom: 8px;
-}
+        border-bottom: 1px solid var(--text);
 
-.book-card .book-title {
-    margin: 0 0 14px;
+        padding-bottom: 3px;
+    }
 
-    font-family: var(--display);
-
-    font-size: 1.45rem;
-
-    font-weight: 400;
-
-    line-height: 0.98;
-
-    letter-spacing: 0.025em;
-
-    text-transform: uppercase;
-}
-
-
-/* ---------------------------------------------------------
-   ENLACE
-   --------------------------------------------------------- */
-
-.book-link {
-    font-family: var(--heading);
-
-    font-size: 0.76rem;
-
-    border-bottom: 1px solid var(--text);
-
-    padding-bottom: 3px;
-}
-
-.book-link:hover {
-    color: var(--accent);
-
-    border-color: var(--accent);
-}
 
     /* -----------------------------------------------------
        MENSAJES
        ----------------------------------------------------- */
 
     .messages-section {
-        padding:
-            0 22px
-            80px;
+        padding: 0 22px 80px;
     }
 
     .message-card,
@@ -1430,9 +1388,7 @@ main {
        ----------------------------------------------------- */
 
     .youtube-section {
-        padding:
-            0 22px
-            80px;
+        padding: 0 22px 80px;
     }
 
 
@@ -1445,6 +1401,8 @@ main {
     }
 
     .media-intro p {
+        max-width: none;
+
         font-size: 1.1rem;
     }
 
@@ -1458,46 +1416,64 @@ main {
     }
 
     .social-intro {
+        max-width: none;
+
         margin-bottom: 45px;
     }
 
     .social-links {
-        grid-template-columns: 1fr;
+        display: flex;
 
-        gap: 0;
+        gap: 18px;
     }
 
     .social-link {
-        padding: 20px 0;
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        SOBRE MÍ
-       ----------------------------------------------------- */
+       ===================================================== */
 
     .about-content {
-        grid-template-columns: 90px 1fr;
+        display: block;
 
-        gap: 25px;
-
-        margin-top: 25px;
+        margin-top: 30px;
     }
 
     .about-photo {
         width: 90px;
-
         height: 90px;
+
+        margin-bottom: 28px;
     }
 
-    .about-author h2 {
-        margin-bottom: 15px;
-
-        font-size: 2rem;
+    .about-name {
+        margin-bottom: 28px;
     }
 
-    .about-author p {
-        font-size: 1rem;
+    .about-name h3 {
+        font-size: 2.35rem;
+
+        line-height: 0.95;
+    }
+
+    .about-text {
+        width: 100%;
+        max-width: none;
+    }
+
+    .about-text p {
+        width: 100%;
+        max-width: none;
+
+        font-size: 1.08rem;
+
+        line-height: 1.6;
     }
 
 
@@ -1506,14 +1482,8 @@ main {
        ----------------------------------------------------- */
 
     .site-footer {
-        padding:
-            35px 22px
-            50px;
+        padding: 35px 22px 50px;
 
         display: block;
-    }
-}
-    .social-link {
-        padding: 20px 0;
     }
 }
