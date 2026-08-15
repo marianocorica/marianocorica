@@ -11,6 +11,19 @@
   css.href = '/site-enhancements.css';
   document.head.appendChild(css);
 
+  if (inBooks) {
+    const bookStyle = document.createElement('style');
+    bookStyle.textContent = '.book-page .mobile-read-button{display:inline-flex !important}.book-page .book-pdf-section{display:none !important}';
+    document.head.appendChild(bookStyle);
+
+    // ESE was uploaded with an uppercase extension; keep the reference compatible with GitHub's case-sensitive paths.
+    document.querySelectorAll('.book-page-cover img').forEach(function (img) {
+      if (/TAPA-ESE\.jpg$/i.test(img.getAttribute('src') || '')) {
+        img.src = '../assets/img/libros/TAPA-ESE.JPG';
+      }
+    });
+  }
+
   const header = document.querySelector('.site-header');
   const nav = document.querySelector('.main-nav');
   const right = document.querySelector('.header-right');
