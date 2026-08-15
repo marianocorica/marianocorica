@@ -5,19 +5,50 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
         Mariano A. Corica — Teólogo y escritor
     </title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Portadas reales de los libros */
+        .book-placeholder {
+            padding: 0;
+            overflow: hidden;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .book-placeholder img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .book-cover {
+            padding: 0;
+            overflow: hidden;
+            display: block;
+            background: transparent;
+            border: 0;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.25s ease;
+        }
+
+        .book-cover:hover img {
+            transform: scale(1.02);
+        }
+    </style>
 
 </head>
 
@@ -25,7 +56,7 @@
 <body>
 
 
-  <header class="site-header">
+<header class="site-header">
 
     <div class="site-header-inner">
 
@@ -33,29 +64,14 @@
             Mariano A. Corica
         </div>
 
-
         <div class="header-right">
 
             <nav class="main-nav">
-
-                <a href="#libros">
-                    Libros
-                </a>
-
-                <a href="#mensajes">
-                    Mensajes
-                </a>
-
-                <a href="#entrevistas">
-                    Entrevistas
-                </a>
-
-                <a href="#sobre-mi">
-                    Sobre mí
-                </a>
-
+                <a href="#libros">Libros</a>
+                <a href="#mensajes">Mensajes</a>
+                <a href="#entrevistas">Entrevistas</a>
+                <a href="#sobre-mi">Sobre mí</a>
             </nav>
-
 
             <div class="header-social">
 
@@ -90,8 +106,6 @@
 
 
 <main>
-
-    <!-- PRESENTACIÓN -->
 
     <section class="hero">
 
@@ -132,9 +146,7 @@
 
             <div class="featured-info">
 
-                <p class="book-year">
-                    2026
-                </p>
+                <p class="book-year">2026</p>
 
                 <h2 class="book-title">
                     EL VACIAMIENTO DE DIOS
@@ -166,34 +178,19 @@
     <section id="libros" class="books-section">
 
         <div class="section-heading">
-
-            <p class="section-label">
-                Obra publicada
-            </p>
-
-            <h2>
-                Libros
-            </h2>
-
+            <p class="section-label">Obra publicada</p>
+            <h2>Libros</h2>
         </div>
 
-
         <div class="books-grid">
-
-            <!-- LIBRO 1 -->
 
             <article class="book-card">
 
                 <a href="libros/EVD.html" class="book-cover">
-                    <img
-                        src="assets/img/libros/TAPA-EVD.jpg"
-                        alt="Portada de El vaciamiento de Dios"
-                    >
+                    <img src="assets/img/libros/TAPA-EVD.jpg" alt="Portada de El vaciamiento de Dios">
                 </a>
 
-                <p class="book-year">
-                    2026
-                </p>
+                <p class="book-year">2026</p>
 
                 <h3 class="book-title">
                     EL VACIAMIENTO DE DIOS
@@ -206,20 +203,13 @@
             </article>
 
 
-            <!-- LIBRO 2 -->
-
             <article class="book-card">
 
                 <a href="libros/EER.html" class="book-cover">
-                    <img
-                        src="assets/img/libros/TAPA-EER.jpg"
-                        alt="Portada de El Evangelio en Romanos"
-                    >
+                    <img src="assets/img/libros/TAPA-EER.jpg" alt="Portada de El Evangelio en Romanos">
                 </a>
 
-                <p class="book-year">
-                    2026
-                </p>
+                <p class="book-year">2026</p>
 
                 <h3 class="book-title">
                     EL EVANGELIO EN ROMANOS
@@ -232,20 +222,13 @@
             </article>
 
 
-            <!-- LIBRO 3 -->
-
             <article class="book-card">
 
                 <a href="libros/POSTRELIGION.html" class="book-cover">
-                    <img
-                        src="assets/img/libros/TAPA-POSTRELIGION.jpg"
-                        alt="Portada de Postreligión"
-                    >
+                    <img src="assets/img/libros/TAPA-POSTRELIGION.jpg" alt="Portada de Postreligión">
                 </a>
 
-                <p class="book-year">
-                    2026
-                </p>
+                <p class="book-year">2026</p>
 
                 <h3 class="book-title">
                     POSTRELIGIÓN
@@ -258,20 +241,13 @@
             </article>
 
 
-            <!-- LIBRO 4 -->
-
             <article class="book-card">
 
                 <a href="libros/ESE.html" class="book-cover">
-                    <img
-                        src="assets/img/libros/TAPA-ESE.jpg"
-                        alt="Portada de Ensayo sobre el Evangelio"
-                    >
+                    <img src="assets/img/libros/TAPA-ESE.jpg" alt="Portada de Ensayo sobre el Evangelio">
                 </a>
 
-                <p class="book-year">
-                    2026
-                </p>
+                <p class="book-year">2026</p>
 
                 <h3 class="book-title">
                     ENSAYO SOBRE EL EVANGELIO
@@ -293,19 +269,11 @@
     <section id="mensajes" class="media-section">
 
         <div class="section-heading">
-
-            <p class="section-label">
-                YouTube
-            </p>
-
-            <h2>
-                Mensajes
-            </h2>
-
+            <p class="section-label">YouTube</p>
+            <h2>Mensajes</h2>
         </div>
 
         <div class="media-intro">
-
             <p>
                 Mensajes y reflexiones bíblicas
                 disponibles en YouTube.
@@ -314,7 +282,6 @@
             <a href="mensajes/index.html" class="text-link">
                 Ver mensajes →
             </a>
-
         </div>
 
     </section>
@@ -325,19 +292,11 @@
     <section id="entrevistas" class="media-section">
 
         <div class="section-heading">
-
-            <p class="section-label">
-                Conversaciones
-            </p>
-
-            <h2>
-                Entrevistas
-            </h2>
-
+            <p class="section-label">Conversaciones</p>
+            <h2>Entrevistas</h2>
         </div>
 
         <div class="media-intro">
-
             <p>
                 Conversaciones y entrevistas sobre
                 teología, fe, cultura y pensamiento.
@@ -346,7 +305,6 @@
             <a href="entrevistas/index.html" class="text-link">
                 Ver entrevistas →
             </a>
-
         </div>
 
     </section>
@@ -363,10 +321,7 @@
         <div class="about-content">
 
             <div class="about-photo">
-                <img
-                    src="assets/img/cara.jpg"
-                    alt="Mariano A. Corica"
-                >
+                <img src="assets/img/cara.jpg" alt="Mariano A. Corica">
             </div>
 
             <div class="about-name">
@@ -392,24 +347,15 @@
 </main>
 
 
-<!-- FOOTER -->
-
 <footer class="site-footer">
 
     <div>
-        <strong>
-            MARIANO A. CORICA
-        </strong>
-
-        <p>
-            Teólogo y escritor
-        </p>
+        <strong>MARIANO A. CORICA</strong>
+        <p>Teólogo y escritor</p>
     </div>
 
     <div>
-        <p>
-            © 2026 Mariano A. Corica
-        </p>
+        <p>© 2026 Mariano A. Corica</p>
     </div>
 
 </footer>
