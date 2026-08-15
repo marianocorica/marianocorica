@@ -13,7 +13,7 @@
 
   if (inBooks) {
     const bookStyle = document.createElement('style');
-    bookStyle.textContent = '.book-page .mobile-read-button{display:inline-flex !important}.book-page .book-pdf-section{display:none !important}';
+    bookStyle.textContent = '.book-page .mobile-read-button{display:inline-flex !important;width:100%;min-height:50px;height:50px;box-sizing:border-box;align-items:center;justify-content:center;padding:0 22px}.book-page .whatsapp-button{display:inline-flex;width:100%;min-height:50px;height:50px;box-sizing:border-box;align-items:center;justify-content:center;padding:0 22px}.book-page .book-pdf-section{display:none !important}';
     document.head.appendChild(bookStyle);
 
     // ESE was uploaded with an uppercase extension; keep the reference compatible with GitHub's case-sensitive paths.
