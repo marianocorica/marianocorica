@@ -85,6 +85,46 @@
     }
   }
 
+  /* Portada: los dos primeros artículos se cargan siempre desde el archivo para mostrar automáticamente los más recientes. */
+  if (!inArticles && !inBooks) {
+    const articlesSection = document.querySelector('#articulos');
+    const carousel = articlesSection && articlesSection.querySelector('.articles-carousel');
+    if (carousel) {
+      fetch('/articulos/index.html', { cache: 'no-store' })
+        .then(function (response) { return response.text(); })
+        .then(function (html) {
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const entries = Array.from(doc.querySelectorAll('.article-entry')).slice(0, 2);
+          if (!entries.length) return;
+
+          carousel.innerHTML = '';
+          entries.forEach(function (entry) {
+            const title = entry.querySelector('h3');
+            const description = entry.querySelector('p');
+            const date = entry.querySelector('.article-date');
+            const link = entry.querySelector('a.article-link');
+            if (!title || !link) return;
+
+            const card = document.createElement('a');
+            card.className = 'article-card';
+            card.href = 'articulos/' + link.getAttribute('href');
+            card.innerHTML = '<div><p class="section-label">' + (date ? date.textContent.trim() : 'Artículo') + '</p><h3>' + title.innerHTML + '</h3>' + (description ? '<p>' + description.innerHTML + '</p>' : '') + '</div><span class="article-card-link">Leer artículo →</span>';
+            carousel.appendChild(card);
+          });
+
+          const archiveLink = articlesSection.querySelector('.articles-archive-link');
+          if (archiveLink) archiveLink.remove();
+
+          const more = document.createElement('a');
+          more.className = 'article-card article-more-card';
+          more.href = 'articulos/index.html';
+          more.innerHTML = '<div><p class="section-label">Archivo</p><h3>Leer más artículos</h3><p>Explorar el archivo completo de pensamiento teológico.</p></div><span class="article-card-link">Ver todos los artículos →</span>';
+          carousel.appendChild(more);
+        })
+        .catch(function () {});
+    }
+  }
+
   const share = document.createElement('button');
   share.className = 'site-share';
   share.type = 'button';
