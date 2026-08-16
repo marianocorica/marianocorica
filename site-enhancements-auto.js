@@ -8,19 +8,15 @@
 
   const css = document.createElement('link');
   css.rel = 'stylesheet';
-  css.href = '/site-enhancements.css';
+  css.href = '/site-enhancements.css?v=20260816';
   document.head.appendChild(css);
 
   if (inBooks) {
     const bookStyle = document.createElement('style');
     bookStyle.textContent = '.book-page .mobile-read-button{display:inline-flex !important;width:100%;min-height:50px;height:50px;box-sizing:border-box;align-items:center;justify-content:center;padding:0 22px;border:1px solid #171716;border-radius:999px;background:#fff;color:#171716;font-family:var(--heading);font-size:.74rem;font-weight:600;letter-spacing:.01em;text-decoration:none}.book-page .mobile-read-button:hover{background:#fff;color:#171716}.book-page .whatsapp-button{display:inline-flex;width:100%;min-height:50px;height:50px;box-sizing:border-box;align-items:center;justify-content:center;padding:0 22px;border:0;border-radius:999px;background:#25D366;color:#fff;font-family:var(--heading);font-size:.74rem;font-weight:600;letter-spacing:.01em;text-decoration:none}.book-page .whatsapp-button:hover{background:#25D366;color:#fff;opacity:.88}.book-page .whatsapp-button svg{fill:#fff}.book-page .book-pdf-section{display:none !important}';
     document.head.appendChild(bookStyle);
-
-    // ESE was uploaded with an uppercase extension; keep the reference compatible with GitHub's case-sensitive paths.
     document.querySelectorAll('.book-page-cover img').forEach(function (img) {
-      if (/TAPA-ESE\.jpg$/i.test(img.getAttribute('src') || '')) {
-        img.src = '../assets/img/libros/TAPA-ESE.JPG';
-      }
+      if (/TAPA-ESE\.jpg$/i.test(img.getAttribute('src') || '')) img.src = '../assets/img/libros/TAPA-ESE.JPG';
     });
   }
 
@@ -54,7 +50,6 @@
     right.appendChild(button);
   }
 
-  // El nombre del autor funciona siempre como enlace de regreso al index principal.
   const siteName = document.querySelector('.site-name');
   if (siteName && !siteName.querySelector('a')) {
     const home = document.createElement('a');
@@ -68,23 +63,35 @@
   share.className = 'site-share';
   share.type = 'button';
   share.innerHTML = '<span class="share-icon" aria-hidden="true">↗</span><span>Compartir</span>';
-  share.setAttribute('aria-label', 'Compartir esta página');
+  share.setAttribute('aria-label', 'Copiar enlace de esta página');
   share.addEventListener('click', function () {
     const title = document.title.replace(/\s+—\s+Mariano A\. Corica.*$/, '');
-    if (navigator.share) {
-      navigator.share({ title: title, text: title, url: location.href }).catch(function () {});
-      return;
+    const url = location.href;
+    const showCopied = function () {
+      const old = document.querySelector('.copy-feedback');
+      if (old) old.remove();
+      const feedback = document.createElement('div');
+      feedback.className = 'copy-feedback';
+      feedback.textContent = 'Enlace copiado';
+      document.body.appendChild(feedback);
+      window.setTimeout(function () { feedback.remove(); }, 2200);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(showCopied).catch(function () { fallbackCopy(url); });
+    } else {
+      fallbackCopy(url);
     }
-    const u = encodeURIComponent(location.href), t = encodeURIComponent(title);
-    const backdrop = document.createElement('div');
-    backdrop.className = 'share-panel-backdrop';
-    backdrop.innerHTML = '<div class="share-panel" role="dialog" aria-modal="true"><button class="share-close" type="button">×</button><p class="share-panel-label">Compartir</p><h2>' + title.replace(/[&<>]/g, '') + '</h2><div class="share-options"><a target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=' + t + '%20' + u + '">WhatsApp</a><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=' + u + '">Facebook</a><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=' + t + '&url=' + u + '">X</a><a href="mailto:?subject=' + t + '&body=' + u + '">Correo</a><button class="copy-share" type="button">Copiar enlace</button></div></div>';
-    document.body.appendChild(backdrop);
-    backdrop.addEventListener('click', function (e) { if (e.target === backdrop || e.target.closest('.share-close')) backdrop.remove(); });
-    backdrop.querySelector('.copy-share').addEventListener('click', function () {
-      const b = this;
-      if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () { b.textContent = 'Enlace copiado'; });
-    });
+    function fallbackCopy(text) {
+      const input = document.createElement('textarea');
+      input.value = text;
+      input.setAttribute('readonly', '');
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+      input.select();
+      try { document.execCommand('copy'); showCopied(); } catch (e) {}
+      input.remove();
+    }
   });
   document.body.appendChild(share);
 
