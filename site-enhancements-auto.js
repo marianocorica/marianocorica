@@ -9,7 +9,7 @@
 
   const css = document.createElement('link');
   css.rel = 'stylesheet';
-  css.href = '/site-enhancements.css?v=20260816-3';
+  css.href = '/site-enhancements.css?v=20260816-4';
   document.head.appendChild(css);
 
   if (inBooks) {
@@ -58,6 +58,17 @@
       });
     });
     right.appendChild(button);
+  }
+
+  const social = document.querySelector('.header-social');
+  if (social && !social.querySelector('[aria-label="Spotify"]')) {
+    const spotify = document.createElement('a');
+    spotify.href = 'https://open.spotify.com/show/7h5yEgRlS5BxgOCV3GCgSJ?si=ca284fc50b2b42bf&nd=1&dlsi=a742d514566a41ce';
+    spotify.target = '_blank';
+    spotify.rel = 'noopener noreferrer';
+    spotify.setAttribute('aria-label', 'Spotify');
+    spotify.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm4.4 12.9a.8.8 0 0 1-1.1.2c-2.9-1.8-6.5-2.2-10.8-1.2a.8.8 0 1 1-.4-1.6c4.7-1.1 8.7-.7 11.9 1.3.4.3.5.8.4 1.3zm1.4-3.1a1 1 0 0 1-1.3.3c-3.3-2-8.4-2.6-12.3-1.4a1 1 0 1 1-.6-1.9c4.5-1.4 10.1-.7 13.9 1.6.5.3.7.9.3 1.4zm.1-3.2c-4-2.4-10.5-2.6-14.3-1.5a1.2 1.2 0 1 1-.7-2.3c4.4-1.3 11.5-1.1 16.1 1.6a1.2 1.2 0 0 1-1.1 2.2z"/></svg>';
+    social.appendChild(spotify);
   }
 
   const siteName = document.querySelector('.site-name');
