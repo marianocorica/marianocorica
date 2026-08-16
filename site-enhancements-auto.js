@@ -8,7 +8,7 @@
 
   const css = document.createElement('link');
   css.rel = 'stylesheet';
-  css.href = '/site-enhancements.css?v=20260816';
+  css.href = '/site-enhancements.css?v=20260816-2';
   document.head.appendChild(css);
 
   if (inBooks) {
@@ -63,25 +63,13 @@
   share.className = 'site-share';
   share.type = 'button';
   share.innerHTML = '<span class="share-icon" aria-hidden="true">↗</span><span>Compartir</span>';
-  share.setAttribute('aria-label', 'Copiar enlace de esta página');
+  share.setAttribute('aria-label', 'Compartir o copiar enlace de esta página');
   share.addEventListener('click', function () {
     const title = document.title.replace(/\s+—\s+Mariano A\. Corica.*$/, '');
     const url = location.href;
-    const showCopied = function () {
-      const old = document.querySelector('.copy-feedback');
-      if (old) old.remove();
-      const feedback = document.createElement('div');
-      feedback.className = 'copy-feedback';
-      feedback.textContent = 'Enlace copiado';
-      document.body.appendChild(feedback);
-      window.setTimeout(function () { feedback.remove(); }, 2200);
-    };
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(url).then(showCopied).catch(function () { fallbackCopy(url); });
-    } else {
-      fallbackCopy(url);
-    }
-    function fallbackCopy(text) {
+    const isMobile = window.matchMedia('(max-width: 700px)').matches;
+
+    function fallbackCopy(text, showFeedback) {
       const input = document.createElement('textarea');
       input.value = text;
       input.setAttribute('readonly', '');
@@ -89,8 +77,34 @@
       input.style.opacity = '0';
       document.body.appendChild(input);
       input.select();
-      try { document.execCommand('copy'); showCopied(); } catch (e) {}
+      try {
+        document.execCommand('copy');
+        if (showFeedback) showCopied();
+      } catch (e) {}
       input.remove();
+    }
+
+    function showCopied() {
+      const old = document.querySelector('.copy-feedback');
+      if (old) old.remove();
+      const feedback = document.createElement('div');
+      feedback.className = 'copy-feedback';
+      feedback.textContent = 'El enlace de acceso fue copiado al portapapeles. Puedes compartir el enlace donde quieras.';
+      document.body.appendChild(feedback);
+      window.setTimeout(function () { feedback.remove(); }, 3500);
+    }
+
+    /* Mobile: conserva el comportamiento de compartir del dispositivo. */
+    if (isMobile && navigator.share) {
+      navigator.share({ title: title, url: url }).catch(function () {});
+      return;
+    }
+
+    /* Desktop: nunca abre el diálogo de compartir de Windows; copia directamente. */
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(showCopied).catch(function () { fallbackCopy(url, true); });
+    } else {
+      fallbackCopy(url, true);
     }
   });
   document.body.appendChild(share);
