@@ -54,6 +54,16 @@
     right.appendChild(button);
   }
 
+  // El nombre del autor funciona siempre como enlace de regreso al index principal.
+  const siteName = document.querySelector('.site-name');
+  if (siteName && !siteName.querySelector('a')) {
+    const home = document.createElement('a');
+    home.href = inBooks || inArticles ? '../index.html' : 'index.html';
+    home.textContent = siteName.textContent;
+    siteName.textContent = '';
+    siteName.appendChild(home);
+  }
+
   const share = document.createElement('button');
   share.className = 'site-share';
   share.type = 'button';
