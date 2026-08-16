@@ -17,9 +17,11 @@
 }
 .site-header{border-bottom:1px solid rgba(255,255,255,.85)}
 .site-header .site-name,
+.site-header .site-name a,
 .site-header .main-nav,
 .site-header .header-social a,
 .site-header .main-nav a:hover{color:#fff}
+.site-header .site-name a{display:block;text-decoration:none}
 .site-header .header-social{border-left-color:rgba(255,255,255,.55)}
 .site-header .header-social a:hover{color:#fff}
 .site-header .header-social .youtube-play{fill:#AA381E}
@@ -27,6 +29,14 @@
 .hero .hero-text{color:rgba(255,255,255,.82)}
 .hero{border-bottom-color:rgba(255,255,255,.25)}
 .site-footer strong,.site-footer p{color:#fff}
+
+/* Fondo de la sección de libros: mismo gris neutro de las portadas */
+.books-section{position:relative;z-index:0}
+.books-section::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--surface)}
+
+/* Botón de compartir: terracota de identidad */
+.site-share{background:#AA381E;color:#fff;border-color:#AA381E}
+.site-share:hover{background:#AA381E}
 
 /* YouTube: misma altura visual que las otras redes; ancho libre */
 .header-social a[aria-label="YouTube"] svg{
