@@ -72,31 +72,14 @@
 :root {
     --background: #ffffff;
     --surface: #f5f5f3;
-
     --text: #171716;
     --muted: #70706b;
     --line: #ddddda;
     --accent: #55554f;
-
     --max-width: 1240px;
-
-    --serif:
-        "Libertinus Serif",
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    --display:
-        "Century 751 Semi",
-        "Century Schoolbook",
-        Georgia,
-        serif;
-
-    --heading:
-        "IBM Plex Sans",
-        Arial,
-        Helvetica,
-        sans-serif;
+    --serif: "Libertinus Serif", Georgia, "Times New Roman", serif;
+    --display: "Century 751 Semi", "Century Schoolbook", Georgia, serif;
+    --heading: "IBM Plex Sans", Arial, Helvetica, sans-serif;
 }
 
 
@@ -104,78 +87,37 @@
    BASE
    ========================================================= */
 
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
     margin: 0;
-
     background: var(--background);
     color: var(--text);
-
     font-family: var(--serif);
-
     font-size: 18px;
-
     line-height: 1.6;
-
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
-
-img,
-iframe {
-    max-width: 100%;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
+img, iframe { max-width: 100%; }
+a { color: inherit; text-decoration: none; }
 
 
 /* =========================================================
    TIPOGRAFÍA GENERAL
    ========================================================= */
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     margin: 0;
-
     font-family: var(--heading);
-
     font-weight: 500;
-
     line-height: 0.98;
-
     letter-spacing: -0.035em;
 }
-
-h1 {
-    font-size: clamp(4rem, 7vw, 7.5rem);
-}
-
-h2 {
-    font-size: clamp(2.8rem, 5vw, 5rem);
-}
-
-h3 {
-    font-size: 1.5rem;
-
-    line-height: 1.05;
-}
-
-em {
-    font-family: var(--serif);
-
-    font-style: italic;
-}
+h1 { font-size: clamp(4rem, 7vw, 7.5rem); }
+h2 { font-size: clamp(2.8rem, 5vw, 5rem); }
+h3 { font-size: 1.5rem; line-height: 1.05; }
+em { font-family: var(--serif); font-style: italic; }
 
 
 /* =========================================================
@@ -184,13 +126,9 @@ em {
 
 .site-name {
     font-family: var(--display) !important;
-
     font-size: 0.9rem;
-
     font-weight: 400;
-
     text-transform: uppercase;
-
     letter-spacing: 0.08em;
 }
 
@@ -203,13 +141,9 @@ em {
 .book-placeholder span,
 .book-cover span {
     font-family: var(--display) !important;
-
     font-weight: 400 !important;
-
     text-transform: uppercase !important;
-
     letter-spacing: 0.025em;
-
     line-height: 0.98;
 }
 
@@ -222,17 +156,11 @@ em {
 .section-label,
 .book-year {
     margin: 0;
-
     color: var(--muted);
-
     font-family: var(--heading);
-
     font-size: 0.68rem;
-
     line-height: 1.2;
-
     text-transform: uppercase;
-
     letter-spacing: 0.14em;
 }
 
@@ -243,29 +171,15 @@ em {
 
 .text-link {
     display: inline-block;
-
     margin-top: 24px;
-
     padding-bottom: 4px;
-
     border-bottom: 1px solid var(--text);
-
     font-family: var(--heading);
-
     font-size: 0.76rem;
-
     font-weight: 600;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
-
-.text-link:hover {
-    color: var(--accent);
-
-    border-color: var(--accent);
-}
+.text-link:hover { color: var(--accent); border-color: var(--accent); }
 
 
 /* =========================================================
@@ -274,70 +188,31 @@ em {
 
 .site-header {
     width: 100%;
-
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-
     background: var(--background);
-
     border-bottom: 1px solid var(--line);
 }
-
 .site-header-inner {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 26px 32px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
-
-.site-name {
-    font-family: var(--display);
-
-    font-size: 0.9rem;
-
-    font-weight: 400;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.08em;
-}
-
-.header-right {
-    display: flex;
-
-    align-items: center;
-
-    gap: 32px;
-}
-
+.header-right { display: flex; align-items: center; gap: 32px; }
 .main-nav {
     display: flex;
-
     align-items: center;
-
     gap: 28px;
-
     font-family: var(--heading);
-
     font-size: 0.78rem;
 }
-
-.main-nav a {
-    transition: color 0.2s ease;
-}
-
-.main-nav a:hover {
-    color: var(--accent);
-}
+.main-nav a { transition: color 0.2s ease; }
+.main-nav a:hover { color: var(--accent); }
 
 
 /* =========================================================
@@ -346,68 +221,32 @@ em {
 
 .header-social {
     display: flex;
-
     align-items: center;
-
     gap: 14px;
-
     padding-left: 28px;
-
     border-left: 1px solid var(--line);
 }
-
 .header-social a {
     width: 20px;
     height: 20px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     color: var(--text);
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
-
-.header-social a:hover {
-    color: var(--accent);
-
-    transform: translateY(-1px);
-}
-
-.header-social svg {
-    width: 17px;
-    height: 17px;
-
-    display: block;
-
-    fill: currentColor;
-}
-
+.header-social a:hover { color: var(--accent); transform: translateY(-1px); }
+.header-social svg { width: 17px; height: 17px; display: block; fill: currentColor; }
 .header-social svg rect,
-.header-social svg circle {
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.7;
-}
-
-.header-social .youtube-play {
-    fill: var(--background);
-}
+.header-social svg circle { fill: none; stroke: currentColor; stroke-width: 1.7; }
+.header-social .youtube-play { fill: var(--background); }
 
 
 /* =========================================================
    COMPENSACIÓN DEL HEADER FIJO
    ========================================================= */
 
-main {
-    padding-top: 82px;
-}
+main { padding-top: 82px; }
 
 
 /* =========================================================
@@ -416,33 +255,18 @@ main {
 
 .hero {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 115px 32px 110px;
-
     border-bottom: 1px solid var(--line);
 }
-
-.hero .eyebrow {
-    margin-bottom: 28px;
-}
-
-.hero h1 {
-    max-width: 1050px;
-}
-
+.hero .eyebrow { margin-bottom: 28px; }
+.hero h1 { max-width: 1050px; }
 .hero-text {
     max-width: 600px;
-
     margin: 35px 0 0;
-
     color: var(--muted);
-
     font-family: var(--serif);
-
     font-size: 1.2rem;
-
     line-height: 1.55;
 }
 
@@ -451,13 +275,8 @@ main {
    SECCIONES
    ========================================================= */
 
-.section-heading {
-    margin-bottom: 55px;
-}
-
-.section-heading h2 {
-    margin-top: 13px;
-}
+.section-heading { margin-bottom: 55px; }
+.section-heading h2 { margin-top: 13px; }
 
 
 /* =========================================================
@@ -466,82 +285,43 @@ main {
 
 .featured-book {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 105px 32px;
-
     border-bottom: 1px solid var(--line);
 }
-
 .featured-content {
     margin-top: 50px;
-
     display: grid;
-
     grid-template-columns: 390px 1fr;
-
     gap: 95px;
-
     align-items: center;
 }
-
 .book-placeholder {
     width: 100%;
-
     aspect-ratio: 0.72;
-
     padding: 32px;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
     background: #1b1b1a;
-
     color: var(--background);
-
-    box-shadow:
-        16px 18px 0 var(--line);
+    box-shadow: 16px 18px 0 var(--line);
 }
-
-.book-placeholder span {
-    font-size: 2.25rem;
-}
-
+.book-placeholder span { font-size: 2.25rem; }
 .book-placeholder small {
     font-family: var(--heading);
-
     font-size: 0.68rem;
-
     text-transform: uppercase;
-
     letter-spacing: 0.12em;
 }
-
-.featured-info {
-    max-width: 650px;
-}
-
-.featured-info .book-year {
-    margin-bottom: 17px;
-}
-
-.featured-info h2 {
-    margin-bottom: 30px;
-}
-
+.featured-info { max-width: 650px; }
+.featured-info .book-year { margin-bottom: 17px; }
+.featured-info h2 { margin-bottom: 30px; }
 .featured-info > p:not(.book-year) {
     margin: 0;
-
     color: var(--muted);
-
     font-family: var(--serif);
-
     font-size: 1.06rem;
-
     line-height: 1.65;
 }
 
@@ -552,84 +332,42 @@ main {
 
 .books-section {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 105px 32px;
-
     border-bottom: 1px solid var(--line);
 }
-
 .books-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
-
-.book-card {
-    min-width: 0;
-}
-
+.book-card { min-width: 0; }
 .book-cover {
     aspect-ratio: 0.72;
-
     margin-bottom: 22px;
-
     padding: 24px;
-
     display: flex;
-
     align-items: flex-end;
-
     background: var(--surface);
-
     border: 1px solid var(--line);
 }
-
-.book-cover span {
-    font-size: 1.45rem;
-}
-
-.book-card .book-year {
-    margin-bottom: 8px;
-}
-
+.book-cover span { font-size: 1.45rem; }
+.book-card .book-year { margin-bottom: 8px; }
 .book-title {
     font-family: var(--display);
-
     font-weight: 400;
-
     text-transform: uppercase;
-
     letter-spacing: 0.02em;
-
     line-height: 0.98;
 }
-
-.book-card .book-title {
-    margin: 0 0 14px;
-
-    font-size: 1.25rem;
-}
-
+.book-card .book-title { margin: 0 0 14px; font-size: 1.25rem; }
 .book-link {
     font-family: var(--heading);
-
     font-size: 0.76rem;
-
     border-bottom: 1px solid var(--text);
-
     padding-bottom: 3px;
 }
-
-.book-link:hover {
-    color: var(--accent);
-
-    border-color: var(--accent);
-}
+.book-link:hover { color: var(--accent); border-color: var(--accent); }
 
 
 /* =========================================================
@@ -638,58 +376,22 @@ main {
 
 .messages-section {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 0 32px 110px;
 }
-
 .message-card {
     display: grid;
-
     grid-template-columns: 1.65fr 1fr;
-
     gap: 65px;
-
     align-items: center;
-
     padding: 65px 0;
-
     border-bottom: 1px solid var(--line);
 }
-
-.message-video {
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    background: #181817;
-}
-
-.message-video iframe {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    border: 0;
-}
-
-.message-info {
-    max-width: 430px;
-}
-
-.message-info h2 {
-    margin-top: 12px;
-
-    font-size: clamp(2.3rem, 4vw, 4rem);
-
-    letter-spacing: -0.035em;
-}
-
-.message-info .text-link {
-    margin-top: 18px;
-}
+.message-video { width: 100%; aspect-ratio: 16 / 9; background: #181817; }
+.message-video iframe { width: 100%; height: 100%; display: block; border: 0; }
+.message-info { max-width: 430px; }
+.message-info h2 { margin-top: 12px; font-size: clamp(2.3rem, 4vw, 4rem); letter-spacing: -0.035em; }
+.message-info .text-link { margin-top: 18px; }
 
 
 /* =========================================================
@@ -698,62 +400,23 @@ main {
 
 .interviews-section {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 0 32px 110px;
 }
-
 .interview {
     display: grid;
-
     grid-template-columns: 1.65fr 1fr;
-
     gap: 65px;
-
     align-items: center;
-
     padding: 65px 0;
-
     border-bottom: 1px solid var(--line);
 }
-
-.interview-video {
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    background: #181817;
-}
-
-.interview-video iframe {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    border: 0;
-}
-
-.interview-info {
-    max-width: 430px;
-}
-
-.interview-info h2 {
-    margin-top: 12px;
-
-    font-size: clamp(2.3rem, 4vw, 4rem);
-
-    letter-spacing: -0.035em;
-}
-
-.interview-info .text-link {
-    margin-top: 18px;
-}
-
-.interviews-playlist {
-    padding-top: 45px;
-}
+.interview-video { width: 100%; aspect-ratio: 16 / 9; background: #181817; }
+.interview-video iframe { width: 100%; height: 100%; display: block; border: 0; }
+.interview-info { max-width: 430px; }
+.interview-info h2 { margin-top: 12px; font-size: clamp(2.3rem, 4vw, 4rem); letter-spacing: -0.035em; }
+.interview-info .text-link { margin-top: 18px; }
+.interviews-playlist { padding-top: 45px; }
 
 
 /* =========================================================
@@ -762,28 +425,11 @@ main {
 
 .youtube-section {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 0 32px 110px;
 }
-
-.youtube-container {
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    background: #181817;
-}
-
-.youtube-container iframe {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    border: 0;
-}
+.youtube-container { width: 100%; aspect-ratio: 16 / 9; background: #181817; }
+.youtube-container iframe { width: 100%; height: 100%; display: block; border: 0; }
 
 
 /* =========================================================
@@ -792,35 +438,24 @@ main {
 
 .media-section {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 105px 32px;
-
     border-bottom: 1px solid var(--line);
 }
-
 .media-intro {
     display: grid;
-
     grid-template-columns: 1fr 1.5fr;
-
     gap: 60px;
-
     align-items: start;
 }
-
 .media-intro p {
     max-width: 580px;
-
     margin: 0;
-
     font-family: var(--serif);
-
     font-size: 1.25rem;
-
     line-height: 1.5;
 }
+
 
 /* =========================================================
    REDES SOCIALES
@@ -828,90 +463,35 @@ main {
 
 .social-section {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 105px 32px;
-
     border-bottom: 1px solid var(--line);
 }
-
 .social-content {
     display: grid;
-
     grid-template-columns: 1fr 1.5fr;
-
     gap: 60px;
-
     align-items: center;
 }
-
-.social-intro {
-    max-width: 430px;
-}
-
-.social-intro h2 {
-    margin-top: 13px;
-}
-
-.social-links {
-    display: flex;
-
-    align-items: center;
-
-    gap: 28px;
-}
-
+.social-intro { max-width: 430px; }
+.social-intro h2 { margin-top: 13px; }
+.social-links { display: flex; align-items: center; gap: 28px; }
 .social-link {
     width: 42px;
     height: 42px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     color: var(--text);
-
     border: 1px solid var(--line);
-
     border-radius: 50%;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-
-.social-link:hover {
-    color: var(--accent);
-
-    border-color: var(--accent);
-
-    transform: translateY(-2px);
-}
-
-.social-link svg {
-    width: 19px;
-    height: 19px;
-
-    display: block;
-
-    fill: currentColor;
-}
-
+.social-link:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+.social-link svg { width: 19px; height: 19px; display: block; fill: currentColor; }
 .social-link svg rect,
-.social-link svg circle {
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.7;
-}
-
-.social-link svg .icon-cut {
-    fill: var(--background);
-}
+.social-link svg circle { fill: none; stroke: currentColor; stroke-width: 1.7; }
+.social-link svg .icon-cut { fill: var(--background); }
 
 
 /* =========================================================
@@ -919,24 +499,12 @@ main {
    ========================================================= */
 
 @media (max-width: 700px) {
-
-    .social-content {
-        display: block;
-    }
-
-    .social-intro {
-        margin-bottom: 35px;
-    }
-
-    .social-links {
-        gap: 18px;
-    }
-
-    .social-link {
-        width: 40px;
-        height: 40px;
-    }
+    .social-content { display: block; }
+    .social-intro { margin-bottom: 35px; }
+    .social-links { gap: 18px; }
+    .social-link { width: 40px; height: 40px; }
 }
+
 
 /* =========================================================
    SOBRE MÍ
@@ -944,90 +512,37 @@ main {
 
 .about-section {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 105px 32px;
-
     border-bottom: 1px solid var(--line);
 }
-
 .about-content {
     display: grid;
-
     grid-template-columns: 125px 1fr 1.7fr;
-
     gap: 45px;
-
     align-items: center;
-
     margin-top: 45px;
 }
-
-
-/* ---------------------------------------------------------
-   FOTO
-   --------------------------------------------------------- */
-
-.about-photo {
-    width: 125px;
-    height: 125px;
-
-    overflow: hidden;
-
-    border-radius: 50%;
-}
-
-.about-photo img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-}
-
-
-/* ---------------------------------------------------------
-   NOMBRE
-   --------------------------------------------------------- */
-
+.about-photo { width: 125px; height: 125px; overflow: hidden; border-radius: 50%; }
+.about-photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .about-name h3 {
     margin: 0;
-
     font-family: var(--display);
-
     font-size: clamp(2.2rem, 3.5vw, 4rem);
-
     font-weight: 400;
-
     line-height: 0.92;
-
     letter-spacing: 0.015em;
-
     text-transform: uppercase;
 }
-
-
-/* ---------------------------------------------------------
-   DESCRIPCIÓN
-   --------------------------------------------------------- */
-
-.about-text {
-    max-width: 580px;
-}
-
+.about-text { max-width: 580px; }
 .about-text p {
     margin: 0;
-
     color: var(--muted);
-
     font-family: var(--serif);
-
     font-size: 1.15rem;
-
     line-height: 1.55;
 }
+
 
 /* =========================================================
    FOOTER
@@ -1035,39 +550,23 @@ main {
 
 .site-footer {
     max-width: var(--max-width);
-
     margin: 0 auto;
-
     padding: 42px 32px 65px;
-
     display: flex;
-
     align-items: flex-start;
-
     justify-content: space-between;
-
     color: var(--muted);
-
     font-family: var(--serif);
-
     font-size: 0.72rem;
 }
-
 .site-footer strong {
     color: var(--text);
-
     font-family: var(--display);
-
     font-weight: 400;
-
     text-transform: uppercase;
-
     letter-spacing: 0.08em;
 }
-
-.site-footer p {
-    margin: 6px 0 0;
-}
+.site-footer p { margin: 6px 0 0; }
 
 
 /* =========================================================
@@ -1075,36 +574,12 @@ main {
    ========================================================= */
 
 @media (max-width: 950px) {
-
-    .main-nav {
-        gap: 18px;
-    }
-
-    .featured-content {
-        grid-template-columns: 330px 1fr;
-
-        gap: 55px;
-    }
-
-    .books-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 40px 28px;
-    }
-
+    .main-nav { gap: 18px; }
+    .featured-content { grid-template-columns: 330px 1fr; gap: 55px; }
+    .books-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 28px; }
     .message-card,
-    .interview {
-        grid-template-columns: 1.4fr 1fr;
-
-        gap: 40px;
-    }
-
-    .social-content {
-        grid-template-columns: 1fr 1.5fr;
-
-        gap: 40px;
-    }
+    .interview { grid-template-columns: 1.4fr 1fr; gap: 40px; }
+    .social-content { grid-template-columns: 1fr 1.5fr; gap: 40px; }
 }
 
 
@@ -1113,377 +588,119 @@ main {
    ========================================================= */
 
 @media (max-width: 700px) {
+    body { font-size: 17px; }
 
-    body {
-        font-size: 17px;
-    }
+    .site-header-inner { padding: 22px; }
+    .site-name { font-size: 0.78rem; }
+    .main-nav { display: none; }
+    .header-right { gap: 0; }
+    .header-social { padding-left: 0; border-left: 0; gap: 12px; }
+    .header-social a { width: 19px; height: 19px; }
+    .header-social svg { width: 16px; height: 16px; }
+    main { padding-top: 70px; }
 
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
-
-    .site-header-inner {
-        padding: 22px;
-    }
-
-    .site-name {
-        font-size: 0.78rem;
-    }
-
-    .main-nav {
-        display: none;
-    }
-
-    .header-right {
-        gap: 0;
-    }
-
-    .header-social {
-        padding-left: 0;
-        border-left: 0;
-        gap: 12px;
-    }
-
-    .header-social a {
-        width: 19px;
-        height: 19px;
-    }
-
-    .header-social svg {
-        width: 16px;
-        height: 16px;
-    }
-
-    main {
-        padding-top: 70px;
-    }
-
-
-    /* -----------------------------------------------------
-       HERO
-       ----------------------------------------------------- */
-
-    .hero {
-        padding: 85px 22px 80px;
-    }
-
-    .hero h1 {
-        font-size: 3.7rem;
-    }
-
-    .hero-text {
-        margin-top: 28px;
-        font-size: 1.08rem;
-    }
-
-
-    /* -----------------------------------------------------
-       SECCIONES
-       ----------------------------------------------------- */
+    .hero { padding: 85px 22px 80px; }
+    .hero h1 { font-size: 3.7rem; }
+    .hero-text { margin-top: 28px; font-size: 1.08rem; }
 
     .featured-book,
     .books-section,
     .media-section,
     .social-section,
-    .about-section {
-        padding: 80px 22px;
-    }
+    .about-section { padding: 80px 22px; }
 
-
-    /* =====================================================
-       LIBRO DESTACADO
-       ===================================================== */
-
-    .featured-content {
-        margin-top: 40px;
-
-        display: block;
-    }
-
+    .featured-content { margin-top: 40px; display: block; }
     .book-placeholder {
         width: 100%;
         max-width: 330px;
-
         margin: 0 auto 45px;
-
         aspect-ratio: 0.72;
-
         overflow: hidden;
-
         background: transparent;
-
         border: none;
-
         box-shadow: none;
     }
-
-    .book-placeholder img {
-        width: 100%;
-        height: 100%;
-
-        display: block;
-
-        object-fit: cover;
-    }
-
-    .featured-info {
-        width: 100%;
-        max-width: none;
-    }
-
-    .featured-info .book-year {
-        margin-bottom: 15px;
-    }
-
+    .book-placeholder img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .featured-info { width: 100%; max-width: none; }
+    .featured-info .book-year { margin-bottom: 15px; }
     .featured-info .book-title {
         margin: 0 0 25px;
-
         font-family: var(--display);
-
         font-size: clamp(2.7rem, 12vw, 4rem);
-
         font-weight: 400;
-
         line-height: 0.95;
-
         letter-spacing: 0.02em;
-
         text-transform: uppercase;
     }
-
     .featured-info > p:not(.book-year) {
         margin: 0;
-
         color: var(--muted);
-
         font-family: var(--serif);
-
         font-size: 1.06rem;
-
         line-height: 1.6;
     }
 
-
     /* =====================================================
-       LIBROS
+       LIBROS — 2 COLUMNAS EN MOBILE
        ===================================================== */
 
-    .books-section {
-        padding: 80px 22px;
-    }
-
+    .books-section { padding: 80px 22px; }
     .books-grid {
         display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 55px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px 18px;
     }
-
-    .book-card {
-        width: 100%;
-        min-width: 0;
-    }
-
-
-    /* -----------------------------------------------------
-       PORTADA
-       ----------------------------------------------------- */
+    .book-card { width: 100%; min-width: 0; }
 
     .book-cover {
         width: 100%;
-
         aspect-ratio: 0.72;
-
         margin-bottom: 20px;
-
         padding: 0;
-
         display: block;
-
         overflow: hidden;
-
         background: transparent;
-
         border: none;
     }
-
     .book-cover img {
         width: 100%;
         height: 100%;
-
         display: block;
-
         object-fit: cover;
-
         transition: transform 0.25s ease;
     }
+    .book-cover:hover img { transform: scale(1.02); }
 
-    .book-cover:hover img {
-        transform: scale(1.02);
-    }
-
-
-    /* -----------------------------------------------------
-       INFORMACIÓN DEL LIBRO
-       ----------------------------------------------------- */
-
-    .book-card .book-year {
-        margin-bottom: 8px;
-    }
-
+    .book-card .book-year { margin-bottom: 8px; }
     .book-card .book-title {
         margin: 0 0 14px;
-
         font-family: var(--display);
-
-        font-size: 1.55rem;
-
+        font-size: 1.25rem;
         font-weight: 400;
-
         line-height: 0.98;
-
         letter-spacing: 0.025em;
-
         text-transform: uppercase;
     }
-
     .book-link {
         font-family: var(--heading);
-
-        font-size: 0.76rem;
-
+        font-size: 0.72rem;
         border-bottom: 1px solid var(--text);
-
         padding-bottom: 3px;
     }
 
-
-    /* -----------------------------------------------------
-       MENSAJES
-       ----------------------------------------------------- */
-
-    .messages-section {
-        padding: 0 22px 80px;
-    }
-
+    .messages-section { padding: 0 22px 80px; }
     .message-card,
-    .interview {
-        grid-template-columns: 1fr;
-
-        gap: 28px;
-
-        padding: 50px 0;
-    }
-
+    .interview { grid-template-columns: 1fr; gap: 28px; padding: 50px 0; }
     .message-info,
-    .interview-info {
-        max-width: 100%;
-    }
-
-
-    /* -----------------------------------------------------
-       YOUTUBE
-       ----------------------------------------------------- */
-
-    .youtube-section {
-        padding: 0 22px 80px;
-    }
-
-
-    /* -----------------------------------------------------
-       MEDIA
-       ----------------------------------------------------- */
-
-    .media-intro {
-        display: block;
-    }
-
-    .media-intro p {
-        max-width: none;
-
-        font-size: 1.1rem;
-    }
-
-
-    /* -----------------------------------------------------
-       REDES SOCIALES
-       ----------------------------------------------------- */
-
-    .social-content {
-        display: block;
-    }
-
-    .social-intro {
-        max-width: none;
-
-        margin-bottom: 45px;
-    }
-
-    .social-links {
-        display: flex;
-
-        gap: 18px;
-    }
-
-    .social-link {
-        width: 40px;
-        height: 40px;
-
-        padding: 0;
-    }
-
-
-    /* =====================================================
-       SOBRE MÍ
-       ===================================================== */
+    .interview-info { max-width: 100%; }
+    .youtube-section { padding: 0 22px 80px; }
+    .media-intro { display: block; }
 
     .about-content {
-        display: block;
-
-        margin-top: 30px;
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
-
-    .about-photo {
-        width: 90px;
-        height: 90px;
-
-        margin-bottom: 28px;
-    }
-
-    .about-name {
-        margin-bottom: 28px;
-    }
-
-    .about-name h3 {
-        font-size: 2.35rem;
-
-        line-height: 0.95;
-    }
-
-    .about-text {
-        width: 100%;
-        max-width: none;
-    }
-
-    .about-text p {
-        width: 100%;
-        max-width: none;
-
-        font-size: 1.08rem;
-
-        line-height: 1.6;
-    }
-
-
-    /* -----------------------------------------------------
-       FOOTER
-       ----------------------------------------------------- */
-
-    .site-footer {
-        padding: 35px 22px 50px;
-
-        display: block;
-    }
+    .about-photo { width: 110px; height: 110px; }
+    .site-footer { padding: 35px 22px 50px; display: block; }
+    .site-footer > div + div { margin-top: 25px; }
 }
