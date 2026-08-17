@@ -1,6 +1,15 @@
 (function () {
   'use strict';
 
+  /* Favicon */
+  if (!document.querySelector('link[rel="icon"]')) {
+    const favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    favicon.type = 'image/png';
+    favicon.href = '/assets/img/lychnos-fav.png';
+    document.head.appendChild(favicon);
+  }
+
   /* Google Analytics 4 */
   if (!window.__marianoAnalyticsLoaded) {
     window.__marianoAnalyticsLoaded = true;
