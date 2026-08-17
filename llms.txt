@@ -1,0 +1,36 @@
+# Mariano A. Corica
+
+> Sitio oficial de Mariano A. Corica, teólogo y escritor. Reúne libros, artículos y trabajos de reflexión teológica sobre cristología, misión, Evangelio, Iglesia, cultura y esperanza.
+
+## Sitio principal
+
+- https://marianocorica.com.ar/ — Sitio oficial y presentación de Mariano A. Corica.
+
+## Libros
+
+- https://marianocorica.com.ar/libros/EER.html — El Evangelio en Romanos.
+- https://marianocorica.com.ar/libros/ESE.html — Ensayo sobre el Evangelio.
+- https://marianocorica.com.ar/libros/EVD.html — El vaciamiento de Dios. Una cristología para la misión.
+- https://marianocorica.com.ar/libros/POSTRELIGION.html — Postreligión.
+
+## Artículos
+
+- https://marianocorica.com.ar/articulos/index.html — Archivo de artículos teológicos.
+- https://marianocorica.com.ar/articulos/aproximaciones-cristologia-latinoamericana-inculturacion.html — Aproximaciones a la cristología latinoamericana e inculturación.
+- https://marianocorica.com.ar/articulos/educacion-trabajo-esperanza-pastoral-argentina-postpandemia.html — Educación, trabajo y esperanza: pastoral argentina postpandemia.
+- https://marianocorica.com.ar/articulos/esperanza-cristologia-latinoamericana.html — Esperanza y cristología latinoamericana.
+- https://marianocorica.com.ar/articulos/horizontes-historicos-y-actuales-de-la-mision.html — Horizontes históricos y actuales de la misión.
+- https://marianocorica.com.ar/articulos/kenosis-y-tapeinosis-de-dios-en-cristo.html — Kenosis y tapeinosis de Dios en Cristo.
+- https://marianocorica.com.ar/articulos/la-experiencia-de-la-resurreccion-pablo-jesus.html — La experiencia de la resurrección: Pablo y Jesús.
+- https://marianocorica.com.ar/articulos/reino-de-dios-paradigma-accion-social-cristiana-rauschenbusch.html — Reino de Dios y acción social cristiana: Rauschenbusch.
+
+## Autor
+
+Mariano A. Corica es teólogo y escritor. El contenido del sitio corresponde a su obra, investigación y reflexión teológica.
+
+## Crawling and discovery
+
+The site is publicly accessible for search engines and AI systems. The canonical discovery resources are:
+
+- https://marianocorica.com.ar/robots.txt
+- https://marianocorica.com.ar/sitemap.xml
