@@ -61,6 +61,10 @@
   }
 
   const social = document.querySelector('.header-social');
+  if (social) {
+    const instagram = social.querySelector('a[aria-label="Instagram"]');
+    if (instagram) instagram.href = 'https://www.instagram.com/mariano.corica';
+  }
   if (social && !social.querySelector('[aria-label="Spotify"]')) {
     const spotify = document.createElement('a');
     spotify.href = 'https://open.spotify.com/show/7h5yEgRlS5BxgOCV3GCgSJ?si=ca284fc50b2b42bf&nd=1&dlsi=a742d514566a41ce';
